@@ -11,7 +11,7 @@ Personal Angular starter for building new applications from a consistent, modern
 >
 > ### ▶️ Try it live
 >
-> [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/SalvatoreDiGenua/angular-boilerplate/tree/feature/demo-stackblitz?startScript=start&title=Angular%20Boilerplate)
+> [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/SalvatoreDiGenua/angular-boilerplate/tree/main?startScript=start&title=Angular%20Boilerplate)
 >
 > No local setup required. Open the project in StackBlitz and explore the running Angular application directly in your browser.
 
