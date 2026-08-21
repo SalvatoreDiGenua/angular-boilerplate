@@ -1,8 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject, linkedSignal, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Seo } from '../../../core/seo/seo';
 
 @Component({
   selector: 'app-docs-signals',
+  imports: [RouterLink],
   templateUrl: './signals.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
