@@ -35,10 +35,10 @@
 
     <section class="mt-16 grid gap-5 md:grid-cols-2" aria-label="Modern rendering features">
       @for (item of [
-        { title: 'provideClientHydration()', text: 'Hydrates the SSR result in the browser. The current Angular hydration pipeline can also enable incremental hydration when defer blocks use hydration triggers.' },
+        { title: 'provideClientHydration()', text: 'Hydrates the SSR result in the browser. In current Angular, hydration also forms the foundation for incremental hydration.' },
         { title: 'Event replay', text: 'User interactions that happen before a deferred island hydrates can be queued and replayed, so early clicks are not lost.' },
         { title: 'Incremental hydration', text: 'Use hydrate triggers with @defer to decide when a server-rendered block becomes interactive on the client.' },
-        { title: 'Route-level render modes', text: 'Each server route can choose Client, Prerender or Server rendering. Static marketing pages can be prerendered while personalized routes stay SSR.' },
+        { title: 'Route-level render modes', text: 'Each server route can choose Client, Prerender or Server rendering. Static pages can be prerendered while personalized routes stay SSR.' },
         { title: '@defer', text: 'Deferrable views move non-critical dependencies out of the initial load. Use placeholder, loading and error states to keep layout stable.' },
         { title: 'View Transitions', text: 'The router can integrate browser View Transitions so route changes feel continuous instead of like full page swaps.' }
       ]; track item.title) {
@@ -59,15 +59,13 @@
         </p>
       </div>
       <div class="overflow-x-auto rounded-2xl border border-white/10 bg-[#09090b] p-5 text-sm leading-7 text-slate-300">
-        <pre><code>&lt;@defer (on idle; hydrate on interaction)&gt;
+        <pre><code>@defer (on idle; hydrate on interaction) {
   &lt;heavy-widget /&gt;
-@placeholder {
+} @placeholder {
   &lt;div class="h-64"&gt;Widget preview&lt;/div&gt;
-}
-@loading {
+} @loading {
   &lt;div&gt;Loading widget…&lt;/div&gt;
-}
-@error {
+} @error {
   &lt;div&gt;Widget unavailable.&lt;/div&gt;
 }</code></pre>
       </div>
