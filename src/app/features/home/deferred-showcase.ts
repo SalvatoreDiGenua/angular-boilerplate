@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { AuthorShowcase } from './author-showcase';
 
 @Component({
   selector: 'app-deferred-showcase',
-  imports: [TranslocoPipe],
+  imports: [TranslocoPipe, AuthorShowcase],
   template: `
     <div class="rounded-3xl border border-cyan-400/20 bg-slate-950 p-6 text-slate-100 shadow-2xl shadow-cyan-950/20">
       <div class="flex items-center justify-between gap-4">
@@ -28,6 +29,8 @@ import { TranslocoPipe } from '@jsverse/transloco';
         </button>
         <span class="text-xs text-slate-400">{{ 'home.rendering.deferredNote' | transloco }}</span>
       </div>
+
+      <app-author-showcase class="mt-10 block" />
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
