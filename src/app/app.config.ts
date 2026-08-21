@@ -7,10 +7,7 @@ import {
   provideZonelessChangeDetection,
 } from '@angular/core';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import {
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
+import { provideClientHydration } from '@angular/platform-browser';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -58,7 +55,9 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
-    provideClientHydration(withEventReplay()),
+    // Angular 22 enables incremental hydration through provideClientHydration().
+    // Event Replay is enabled automatically as part of incremental hydration.
+    provideClientHydration(),
     provideTransloco({
       config: {
         availableLangs: ['en', 'it'],
