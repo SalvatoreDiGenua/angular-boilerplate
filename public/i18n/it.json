@@ -95,6 +95,15 @@
     "tooling": {
       "title": "Un workflow pronto per il progetto"
     },
+    "author": {
+      "eyebrow": "Autore",
+      "title": "Progetti e librerie di Salvatore Di Genua",
+      "description": "Questo boilerplate nasce come base personale per i miei progetti Angular. Sul mio profilo GitHub puoi trovare le altre applicazioni e le librerie che uso e sviluppo.",
+      "profileCta": "Visita il profilo GitHub",
+      "libraryTitle": "ngx-request-lock",
+      "libraryDescription": "Una libreria Angular per bloccare i controlli dell'interfaccia durante il ciclo di vita delle richieste HTTP, coordinando più elementi attraverso un requestId condiviso.",
+      "libraryCta": "Apri la repository"
+    },
     "footer": "Usa questa pagina come riferimento quando aggiorni Angular. Mantieni gli esempi allineati alle API adottate dal boilerplate.",
     "backToTop": "Torna all'inizio"
   }
