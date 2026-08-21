@@ -1,4 +1,8 @@
-import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
+import {
+  HttpErrorResponse,
+  HttpInterceptorFn,
+  HttpRequest,
+} from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { firstValueFrom, throwError } from 'rxjs';
 import { ApiError } from '../../../services/api-error';
@@ -20,15 +24,10 @@ describe('errorInterceptor', () => {
       url: '/api/profile',
     });
 
-    const request = new Request('/api/profile');
-    const httpRequest = {
-      url: request.url,
-    } as never;
+    const request = new HttpRequest('GET', '/api/profile');
 
     await expect(
-      firstValueFrom(
-        interceptor(httpRequest, () => throwError(() => error)),
-      ),
+      firstValueFrom(interceptor(request, () => throwError(() => error))),
     ).rejects.toBe(error);
 
     expect(apiError.error()).toEqual({
@@ -44,12 +43,11 @@ describe('errorInterceptor', () => {
       status: 500,
       statusText: 'Server Error',
     });
-    const httpRequest = { url: '/api/fallback' } as never;
+
+    const request = new HttpRequest('GET', '/api/fallback');
 
     await expect(
-      firstValueFrom(
-        interceptor(httpRequest, () => throwError(() => error)),
-      ),
+      firstValueFrom(interceptor(request, () => throwError(() => error))),
     ).rejects.toBe(error);
 
     expect(apiError.error()?.url).toBe('/api/fallback');
@@ -58,12 +56,10 @@ describe('errorInterceptor', () => {
   it('does not report non-HTTP errors', async () => {
     const apiError = TestBed.inject(ApiError);
     const error = new Error('Unexpected failure');
-    const httpRequest = { url: '/api/profile' } as never;
+    const request = new HttpRequest('GET', '/api/profile');
 
     await expect(
-      firstValueFrom(
-        interceptor(httpRequest, () => throwError(() => error)),
-      ),
+      firstValueFrom(interceptor(request, () => throwError(() => error))),
     ).rejects.toBe(error);
 
     expect(apiError.error()).toBeNull();
