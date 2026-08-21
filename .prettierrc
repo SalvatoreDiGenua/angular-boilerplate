@@ -5,6 +5,8 @@
   "semi": true,
   "trailingComma": "all",
   "arrowParens": "always",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/styles.css",
   "overrides": [
     {
       "files": "*.html",
