@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { inject, Service } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 export interface SeoConfig {
@@ -9,7 +9,7 @@ export interface SeoConfig {
   robots?: string;
 }
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class Seo {
   private readonly document = inject(DOCUMENT);
   private readonly meta = inject(Meta);
