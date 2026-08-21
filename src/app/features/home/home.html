@@ -1,16 +1,54 @@
-<main id="main-content" class="min-h-dvh overflow-x-clip bg-slate-950 text-slate-100 selection:bg-cyan-300 selection:text-slate-950">
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl">
-    <div class="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8">
-      <a href="#top" class="flex items-center gap-3 font-semibold tracking-tight" aria-label="Angular Boilerplate">
-        <span class="grid size-9 place-items-center rounded-xl bg-white text-sm font-black text-slate-950">A</span>
+<main
+  id="main-content"
+  class="min-h-dvh overflow-x-clip bg-slate-950 text-slate-100 selection:bg-cyan-300 selection:text-slate-950"
+>
+  <header
+    class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/85 backdrop-blur-xl"
+  >
+    <div
+      class="mx-auto flex min-h-16 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8"
+    >
+      <a
+        href="#top"
+        class="flex items-center gap-3 font-semibold tracking-tight"
+        aria-label="Angular Boilerplate"
+      >
+        <span
+          class="grid size-9 place-items-center rounded-xl bg-white text-sm font-black text-slate-950"
+        >
+          A
+        </span>
         <span class="hidden sm:inline">Angular Boilerplate</span>
       </a>
 
-      <nav [attr.aria-label]="'home.nav.label' | transloco" class="hidden items-center gap-1 md:flex">
-        <a href="#architecture" class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white">{{ 'home.nav.architecture' | transloco }}</a>
-        <a href="#signals" class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white">{{ 'home.nav.signals' | transloco }}</a>
-        <a href="#rendering" class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white">{{ 'home.nav.rendering' | transloco }}</a>
-        <a href="#data" class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white">{{ 'home.nav.data' | transloco }}</a>
+      <nav
+        [attr.aria-label]="'home.nav.label' | transloco"
+        class="hidden items-center gap-1 md:flex"
+      >
+        <a
+          href="#architecture"
+          class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+        >
+          {{ 'home.nav.architecture' | transloco }}
+        </a>
+        <a
+          href="#signals"
+          class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+        >
+          {{ 'home.nav.signals' | transloco }}
+        </a>
+        <a
+          href="#rendering"
+          class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+        >
+          {{ 'home.nav.rendering' | transloco }}
+        </a>
+        <a
+          href="#data"
+          class="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+        >
+          {{ 'home.nav.data' | transloco }}
+        </a>
       </nav>
 
       <button
@@ -26,42 +64,74 @@
 
   <div id="top"></div>
 
-  <section class="relative isolate border-b border-white/10" aria-labelledby="hero-title">
-    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.14),transparent_32%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.12),transparent_30%)]"></div>
-    <div class="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
+  <section
+    class="relative isolate border-b border-white/10"
+    aria-labelledby="hero-title"
+  >
+    <div
+      class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.14),transparent_32%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.12),transparent_30%)]"
+    ></div>
+    <div
+      class="mx-auto grid min-h-[calc(100dvh-4rem)] max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:py-28"
+    >
       <div>
-        <p class="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3 py-1.5 text-xs font-bold tracking-[0.18em] text-cyan-300 uppercase">
+        <p
+          class="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/5 px-3 py-1.5 text-xs font-bold tracking-[0.18em] text-cyan-300 uppercase"
+        >
           Angular 22 · Signal-first · SSR
         </p>
-        <h1 id="hero-title" class="max-w-5xl text-5xl leading-[0.98] font-black tracking-[-0.04em] text-balance sm:text-6xl lg:text-8xl">
+        <h1
+          id="hero-title"
+          class="max-w-5xl text-5xl leading-[0.98] font-black tracking-[-0.04em] text-balance sm:text-6xl lg:text-8xl"
+        >
           {{ 'home.hero.title' | transloco }}
         </h1>
         <p class="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
           {{ 'home.hero.description' | transloco }}
         </p>
         <div class="mt-9 flex flex-wrap gap-3">
-          <a href="#signals" class="inline-flex min-h-12 items-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">
+          <a
+            href="#signals"
+            class="inline-flex min-h-12 items-center rounded-xl bg-white px-5 py-3 text-sm font-bold text-slate-950 transition hover:-translate-y-0.5 hover:bg-cyan-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          >
             {{ 'home.hero.primary' | transloco }}
           </a>
-          <a href="#rendering" class="inline-flex min-h-12 items-center rounded-xl border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">
+          <a
+            href="#rendering"
+            class="inline-flex min-h-12 items-center rounded-xl border border-white/15 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          >
             {{ 'home.hero.secondary' | transloco }}
           </a>
         </div>
-        <div class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-400">
+        <div
+          class="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-400"
+        >
           <span>✓ {{ 'home.hero.badge1' | transloco }}</span>
           <span>✓ {{ 'home.hero.badge2' | transloco }}</span>
           <span>✓ {{ 'home.hero.badge3' | transloco }}</span>
         </div>
       </div>
 
-      <div class="rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-2xl shadow-cyan-950/20 backdrop-blur">
+      <div
+        class="rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-2xl shadow-cyan-950/20 backdrop-blur"
+      >
         <div class="rounded-[1.5rem] border border-white/10 bg-slate-900 p-6">
-          <div class="flex items-center justify-between border-b border-white/10 pb-4">
+          <div
+            class="flex items-center justify-between border-b border-white/10 pb-4"
+          >
             <div>
-              <p class="text-xs font-semibold tracking-[0.18em] text-cyan-300 uppercase">app.config.ts</p>
-              <p class="mt-1 text-sm text-slate-400">{{ 'home.hero.configCaption' | transloco }}</p>
+              <p
+                class="text-xs font-semibold tracking-[0.18em] text-cyan-300 uppercase"
+              >
+                app.config.ts
+              </p>
+              <p class="mt-1 text-sm text-slate-400">
+                {{ 'home.hero.configCaption' | transloco }}
+              </p>
             </div>
-            <span class="size-2.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50"></span>
+            <span
+              class="size-2.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50"
+            ></span>
           </div>
           <pre class="mt-5 overflow-x-auto text-sm leading-7 text-slate-300">
             <code>
@@ -78,39 +148,79 @@ signal → computed → resource
     </div>
   </section>
 
-  <section id="architecture" class="scroll-mt-20 border-b border-white/10 bg-white/[0.02]" aria-labelledby="architecture-title">
+  <section
+    id="architecture"
+    class="scroll-mt-20 border-b border-white/10 bg-white/[0.02]"
+    aria-labelledby="architecture-title"
+  >
     <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
       <div class="max-w-3xl">
-        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">01 · Architecture</p>
-        <h2 id="architecture-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.architecture.title' | transloco }}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.architecture.description' | transloco }}</p>
+        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          01 · Architecture
+        </p>
+        <h2
+          id="architecture-title"
+          class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+        >
+          {{ 'home.architecture.title' | transloco }}
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">
+          {{ 'home.architecture.description' | transloco }}
+        </p>
       </div>
 
       <div class="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         @for (feature of featureCards; track feature.id) {
-          <article class="group rounded-2xl border border-white/10 bg-slate-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-slate-900">
-            <span class="text-xs font-bold text-cyan-300">{{ feature.icon }}</span>
-            <h3 class="mt-7 text-xl font-bold">{{ ('home.features.' + feature.key + '.title') | transloco }}</h3>
-            <p class="mt-3 text-sm leading-6 text-slate-400">{{ ('home.features.' + feature.key + '.description') | transloco }}</p>
+          <article
+            class="group rounded-2xl border border-white/10 bg-slate-900/70 p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-slate-900"
+          >
+            <span class="text-xs font-bold text-cyan-300">
+              {{ feature.icon }}
+            </span>
+            <h3 class="mt-7 text-xl font-bold">
+              {{ 'home.features.' + feature.key + '.title' | transloco }}
+            </h3>
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              {{ 'home.features.' + feature.key + '.description' | transloco }}
+            </p>
           </article>
         }
       </div>
     </div>
   </section>
 
-  <section id="signals" class="scroll-mt-20 border-b border-white/10" aria-labelledby="signals-title">
-    <div class="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:py-32">
+  <section
+    id="signals"
+    class="scroll-mt-20 border-b border-white/10"
+    aria-labelledby="signals-title"
+  >
+    <div
+      class="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:py-32"
+    >
       <div>
-        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">02 · Signals</p>
-        <h2 id="signals-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.signals.title' | transloco }}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.signals.description' | transloco }}</p>
+        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          02 · Signals
+        </p>
+        <h2
+          id="signals-title"
+          class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+        >
+          {{ 'home.signals.title' | transloco }}
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">
+          {{ 'home.signals.description' | transloco }}
+        </p>
       </div>
 
-      <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8">
+      <div
+        class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 sm:p-8"
+      >
         <div class="grid gap-4 sm:grid-cols-2">
           <div class="rounded-2xl border border-white/10 bg-slate-900 p-5">
             <p class="text-xs font-semibold text-slate-400">signal()</p>
-            <p class="mt-4 text-4xl font-black text-white">{{ signalValue() }}</p>
+            <p class="mt-4 text-4xl font-black text-white">
+              {{ signalValue() }}
+            </p>
             <button
               type="button"
               class="mt-5 min-h-11 rounded-xl bg-cyan-300 px-4 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
@@ -121,12 +231,18 @@ signal → computed → resource
           </div>
           <div class="rounded-2xl border border-white/10 bg-slate-900 p-5">
             <p class="text-xs font-semibold text-slate-400">computed()</p>
-            <p class="mt-4 text-4xl font-black text-cyan-300">{{ doubledValue() }}</p>
-            <p class="mt-3 text-sm leading-6 text-slate-400">{{ 'home.signals.computed' | transloco }}</p>
+            <p class="mt-4 text-4xl font-black text-cyan-300">
+              {{ doubledValue() }}
+            </p>
+            <p class="mt-3 text-sm leading-6 text-slate-400">
+              {{ 'home.signals.computed' | transloco }}
+            </p>
           </div>
         </div>
 
-        <pre class="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/20 p-5 text-sm leading-7 text-slate-300">
+        <pre
+          class="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/20 p-5 text-sm leading-7 text-slate-300"
+        >
           <code>
 readonly count = signal(42);
 readonly doubled = computed(() =&gt; count() * 2);
@@ -140,49 +256,86 @@ readonly doubled = computed(() =&gt; count() * 2);
     </div>
   </section>
 
-  <section id="rendering" class="scroll-mt-20 border-b border-white/10 bg-white/[0.02]" aria-labelledby="rendering-title">
+  <section
+    id="rendering"
+    class="scroll-mt-20 border-b border-white/10 bg-white/[0.02]"
+    aria-labelledby="rendering-title"
+  >
     <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
       <div class="max-w-3xl">
-        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">03 · Rendering & hydration</p>
-        <h2 id="rendering-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.rendering.title' | transloco }}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.rendering.description' | transloco }}</p>
+        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          03 · Rendering & hydration
+        </p>
+        <h2
+          id="rendering-title"
+          class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+        >
+          {{ 'home.rendering.title' | transloco }}
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">
+          {{ 'home.rendering.description' | transloco }}
+        </p>
       </div>
 
       <div class="mt-12 grid gap-4 lg:grid-cols-3">
         <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
           <span class="text-xs font-bold text-cyan-300">SSR</span>
-          <h3 class="mt-4 text-xl font-bold">{{ 'home.rendering.ssrTitle' | transloco }}</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">{{ 'home.rendering.ssrDescription' | transloco }}</p>
+          <h3 class="mt-4 text-xl font-bold">
+            {{ 'home.rendering.ssrTitle' | transloco }}
+          </h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">
+            {{ 'home.rendering.ssrDescription' | transloco }}
+          </p>
         </article>
         <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
           <span class="text-xs font-bold text-cyan-300">Hydration</span>
-          <h3 class="mt-4 text-xl font-bold">{{ 'home.rendering.hydrationTitle' | transloco }}</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-400">{{ 'home.rendering.hydrationDescription' | transloco }}</p>
+          <h3 class="mt-4 text-xl font-bold">
+            {{ 'home.rendering.hydrationTitle' | transloco }}
+          </h3>
+          <p class="mt-3 text-sm leading-6 text-slate-400">
+            {{ 'home.rendering.hydrationDescription' | transloco }}
+          </p>
         </article>
-        <article class="rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-6">
+        <article
+          class="rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-6"
+        >
           <span class="text-xs font-bold text-cyan-300">&#64;defer</span>
-          <h3 class="mt-4 text-xl font-bold">{{ 'home.rendering.deferTitle' | transloco }}</h3>
-          <p class="mt-3 text-sm leading-6 text-slate-300">{{ 'home.rendering.deferDescription' | transloco }}</p>
+          <h3 class="mt-4 text-xl font-bold">
+            {{ 'home.rendering.deferTitle' | transloco }}
+          </h3>
+          <p class="mt-3 text-sm leading-6 text-slate-300">
+            {{ 'home.rendering.deferDescription' | transloco }}
+          </p>
         </article>
       </div>
 
       <div class="mt-8">
-        <p class="mb-4 text-sm font-semibold text-slate-300">{{ 'home.rendering.liveDemo' | transloco }}</p>
+        <p class="mb-4 text-sm font-semibold text-slate-300">
+          {{ 'home.rendering.liveDemo' | transloco }}
+        </p>
         @defer (on viewport; hydrate on interaction) {
           <app-deferred-showcase />
         } @placeholder {
-          <div class="min-h-48 animate-pulse rounded-3xl border border-white/10 bg-white/[0.04] p-6">
+          <div
+            class="min-h-48 animate-pulse rounded-3xl border border-white/10 bg-white/[0.04] p-6"
+          >
             <div class="h-3 w-32 rounded bg-white/10"></div>
             <div class="mt-5 h-6 w-2/3 rounded bg-white/10"></div>
             <div class="mt-4 h-4 w-full rounded bg-white/10"></div>
             <div class="mt-2 h-4 w-5/6 rounded bg-white/10"></div>
           </div>
         } @loading (minimum 200ms) {
-          <div class="rounded-3xl border border-white/10 bg-slate-900 p-6 text-sm text-slate-400" role="status">
+          <div
+            class="rounded-3xl border border-white/10 bg-slate-900 p-6 text-sm text-slate-400"
+            role="status"
+          >
             {{ 'home.rendering.loading' | transloco }}
           </div>
         } @error {
-          <div class="rounded-3xl border border-rose-300/20 bg-rose-300/5 p-6 text-sm text-rose-200" role="alert">
+          <div
+            class="rounded-3xl border border-rose-300/20 bg-rose-300/5 p-6 text-sm text-rose-200"
+            role="alert"
+          >
             {{ 'home.rendering.error' | transloco }}
           </div>
         }
@@ -190,37 +343,71 @@ readonly doubled = computed(() =&gt; count() * 2);
     </div>
   </section>
 
-  <section id="data" class="scroll-mt-20 border-b border-white/10" aria-labelledby="data-title">
+  <section
+    id="data"
+    class="scroll-mt-20 border-b border-white/10"
+    aria-labelledby="data-title"
+  >
     <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
       <div class="max-w-3xl">
-        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">04 · Reactive data</p>
-        <h2 id="data-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.data.title' | transloco }}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.data.description' | transloco }}</p>
+        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          04 · Reactive data
+        </p>
+        <h2
+          id="data-title"
+          class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+        >
+          {{ 'home.data.title' | transloco }}
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">
+          {{ 'home.data.description' | transloco }}
+        </p>
       </div>
 
       <div class="mt-12 grid gap-4 md:grid-cols-3">
         <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
           <code class="text-sm font-bold text-cyan-300">resource()</code>
-          <p class="mt-4 text-sm leading-6 text-slate-400">{{ 'home.data.resource' | transloco }}</p>
+          <p class="mt-4 text-sm leading-6 text-slate-400">
+            {{ 'home.data.resource' | transloco }}
+          </p>
         </article>
         <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
           <code class="text-sm font-bold text-cyan-300">httpResource()</code>
-          <p class="mt-4 text-sm leading-6 text-slate-400">{{ 'home.data.httpResource' | transloco }}</p>
+          <p class="mt-4 text-sm leading-6 text-slate-400">
+            {{ 'home.data.httpResource' | transloco }}
+          </p>
         </article>
         <article class="rounded-2xl border border-white/10 bg-slate-900 p-6">
           <code class="text-sm font-bold text-cyan-300">linkedSignal()</code>
-          <p class="mt-4 text-sm leading-6 text-slate-400">{{ 'home.data.linkedSignal' | transloco }}</p>
+          <p class="mt-4 text-sm leading-6 text-slate-400">
+            {{ 'home.data.linkedSignal' | transloco }}
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="forms" class="scroll-mt-20 border-b border-white/10 bg-white/[0.02]" aria-labelledby="forms-title">
-    <div class="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2 lg:py-32">
+  <section
+    id="forms"
+    class="scroll-mt-20 border-b border-white/10 bg-white/[0.02]"
+    aria-labelledby="forms-title"
+  >
+    <div
+      class="mx-auto grid max-w-7xl gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2 lg:py-32"
+    >
       <div>
-        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">05 · Signal Forms</p>
-        <h2 id="forms-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.forms.title' | transloco }}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.forms.description' | transloco }}</p>
+        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          05 · Signal Forms
+        </p>
+        <h2
+          id="forms-title"
+          class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+        >
+          {{ 'home.forms.title' | transloco }}
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">
+          {{ 'home.forms.description' | transloco }}
+        </p>
       </div>
       <div class="rounded-3xl border border-white/10 bg-slate-900 p-6 sm:p-8">
         <pre class="overflow-x-auto text-sm leading-7 text-slate-300">
@@ -233,19 +420,36 @@ const profile = form(model, (path) =&gt; &#123;
 &lt;input [formField]="profile.email" /&gt;
           </code>
         </pre>
-        <p class="mt-5 text-sm leading-6 text-slate-400">{{ 'home.forms.note' | transloco }}</p>
+        <p class="mt-5 text-sm leading-6 text-slate-400">
+          {{ 'home.forms.note' | transloco }}
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="di" class="scroll-mt-20 border-b border-white/10" aria-labelledby="di-title">
+  <section
+    id="di"
+    class="scroll-mt-20 border-b border-white/10"
+    aria-labelledby="di-title"
+  >
     <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
       <div class="max-w-3xl">
-        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">06 · Dependency Injection</p>
-        <h2 id="di-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.di.title' | transloco }}</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.di.description' | transloco }}</p>
+        <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+          06 · Dependency Injection
+        </p>
+        <h2
+          id="di-title"
+          class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+        >
+          {{ 'home.di.title' | transloco }}
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-400">
+          {{ 'home.di.description' | transloco }}
+        </p>
       </div>
-      <div class="mt-10 rounded-3xl border border-white/10 bg-slate-900 p-6 sm:p-8">
+      <div
+        class="mt-10 rounded-3xl border border-white/10 bg-slate-900 p-6 sm:p-8"
+      >
         <pre class="overflow-x-auto text-sm leading-7 text-slate-300">
           <code>
 import &#123; Service, inject &#125; from '@angular/core';
@@ -256,26 +460,62 @@ export class DataClient &#123;
 &#125;
           </code>
         </pre>
-        <p class="mt-5 max-w-3xl text-sm leading-6 text-slate-400">{{ 'home.di.note' | transloco }}</p>
+        <p class="mt-5 max-w-3xl text-sm leading-6 text-slate-400">
+          {{ 'home.di.note' | transloco }}
+        </p>
       </div>
     </div>
   </section>
 
-  <section id="tooling" class="border-b border-white/10 bg-white/[0.02]" aria-labelledby="tooling-title">
+  <section
+    id="tooling"
+    class="border-b border-white/10 bg-white/[0.02]"
+    aria-labelledby="tooling-title"
+  >
     <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
-      <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">07 · Tooling</p>
-      <h2 id="tooling-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.tooling.title' | transloco }}</h2>
+      <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">
+        07 · Tooling
+      </p>
+      <h2
+        id="tooling-title"
+        class="mt-3 text-4xl font-black tracking-tight sm:text-5xl"
+      >
+        {{ 'home.tooling.title' | transloco }}
+      </h2>
       <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">Angular CLI</div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">Vitest</div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">ESLint</div>
-        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">Prettier + Tailwind</div>
+        <div
+          class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200"
+        >
+          Angular CLI
+        </div>
+        <div
+          class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200"
+        >
+          Vitest
+        </div>
+        <div
+          class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200"
+        >
+          ESLint
+        </div>
+        <div
+          class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200"
+        >
+          Prettier + Tailwind
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-12 text-sm text-slate-500 sm:px-8 sm:flex-row sm:items-center sm:justify-between">
+  <footer
+    class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-12 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between sm:px-8"
+  >
     <p>{{ 'home.footer' | transloco }}</p>
-    <a href="#top" class="font-semibold text-slate-300 transition hover:text-white">{{ 'home.backToTop' | transloco }}</a>
+    <a
+      href="#top"
+      class="font-semibold text-slate-300 transition hover:text-white"
+    >
+      {{ 'home.backToTop' | transloco }}
+    </a>
   </footer>
 </main>

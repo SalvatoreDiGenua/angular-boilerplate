@@ -5,10 +5,15 @@ import { TranslocoPipe } from '@jsverse/transloco';
   selector: 'app-author-showcase',
   imports: [TranslocoPipe],
   template: `
-    <section class="border-t border-white/10 pt-8" aria-labelledby="author-title">
+    <section
+      class="border-t border-white/10 pt-8"
+      aria-labelledby="author-title"
+    >
       <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
         <div>
-          <p class="text-xs font-semibold tracking-[0.2em] text-cyan-300 uppercase">
+          <p
+            class="text-xs font-semibold tracking-[0.2em] text-cyan-300 uppercase"
+          >
             {{ 'home.author.eyebrow' | transloco }}
           </p>
           <h2 id="author-title" class="mt-2 text-2xl font-bold">

@@ -6,13 +6,24 @@ import { AuthorShowcase } from './author-showcase';
   selector: 'app-deferred-showcase',
   imports: [TranslocoPipe, AuthorShowcase],
   template: `
-    <div class="rounded-3xl border border-cyan-400/20 bg-slate-950 p-6 text-slate-100 shadow-2xl shadow-cyan-950/20">
+    <div
+      class="rounded-3xl border border-cyan-400/20 bg-slate-950 p-6 text-slate-100 shadow-2xl shadow-cyan-950/20"
+    >
       <div class="flex items-center justify-between gap-4">
         <div>
-          <p class="text-xs font-semibold tracking-[0.2em] text-cyan-300 uppercase">{{ 'home.rendering.deferredEyebrow' | transloco }}</p>
-          <h3 class="mt-2 text-xl font-semibold">{{ 'home.rendering.deferredTitle' | transloco }}</h3>
+          <p
+            class="text-xs font-semibold tracking-[0.2em] text-cyan-300 uppercase"
+          >
+            {{ 'home.rendering.deferredEyebrow' | transloco }}
+          </p>
+          <h3 class="mt-2 text-xl font-semibold">
+            {{ 'home.rendering.deferredTitle' | transloco }}
+          </h3>
         </div>
-        <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300">{{ 'home.rendering.deferredBadge' | transloco }}</span>
+        <span
+          class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-medium text-emerald-300"
+          >{{ 'home.rendering.deferredBadge' | transloco }}</span
+        >
       </div>
 
       <p class="mt-4 max-w-2xl text-sm leading-6 text-slate-300">
@@ -27,7 +38,9 @@ import { AuthorShowcase } from './author-showcase';
         >
           {{ 'home.rendering.deferredButton' | transloco }}: {{ count() }}
         </button>
-        <span class="text-xs text-slate-400">{{ 'home.rendering.deferredNote' | transloco }}</span>
+        <span class="text-xs text-slate-400">{{
+          'home.rendering.deferredNote' | transloco
+        }}</span>
       </div>
 
       <app-author-showcase class="mt-10 block" />

@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { Language } from '../../core/i18n/language';
 import { Seo } from '../../core/seo/seo';
