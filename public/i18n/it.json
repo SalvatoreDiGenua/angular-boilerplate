@@ -1,8 +1,93 @@
 {
   "home": {
-    "title": "Una base Angular pronta per la produzione",
-    "description": "Una base Angular 22 pulita con SSR, hydration, i18n, Tailwind CSS, signals, infrastruttura HTTP e testing moderno.",
+    "nav": {
+      "label": "Sezioni della pagina",
+      "architecture": "Architettura",
+      "signals": "Signals",
+      "rendering": "Rendering",
+      "data": "Dati"
+    },
     "changeLanguage": "Cambia lingua",
-    "homeLink": "Home"
+    "hero": {
+      "title": "Una vetrina viva per l'Angular moderno",
+      "description": "Questo boilerplate è progettato per rimanere allineato alle funzionalità più recenti di Angular: stato signal-first, change detection zoneless, SSR, hydration, incremental hydration, viste differibili e API reattive per i dati.",
+      "primary": "Esplora i Signals",
+      "secondary": "Guarda la hydration in azione",
+      "badge1": "API standalone",
+      "badge2": "SSR + hydration",
+      "badge3": "Tailwind + Vitest",
+      "configCaption": "La fondazione dell'applicazione"
+    },
+    "architecture": {
+      "title": "Una fondazione applicativa, non uno starter vuoto",
+      "description": "Il boilerplate riunisce l'infrastruttura che ricorre nelle applicazioni Angular reali, lasciando intenzionalmente vuota la logica di business. Ogni sezione seguente è un punto di partenza documentato da poter forkare ed estendere."
+    },
+    "features": {
+      "signals": {
+        "title": "Stato signal-first",
+        "description": "Signals, stato derivato e primitive reattive moderne offrono un modello diretto per lo stato locale e condiviso dell'applicazione."
+      },
+      "defer": {
+        "title": "Viste differibili",
+        "description": "Il control flow integrato può rimandare le dipendenze e rendere interattive le isole soltanto quando l'utente ne ha bisogno."
+      },
+      "hydration": {
+        "title": "SSR + hydration",
+        "description": "L'HTML renderizzato sul server diventa interattivo nel browser senza essere scartato e ricostruito da zero."
+      },
+      "resources": {
+        "title": "Resource API",
+        "description": "resource() e httpResource() portano i dati asincroni nel modello dei signals con stati espliciti di caricamento, errore e valore."
+      },
+      "forms": {
+        "title": "Signal Forms",
+        "description": "Angular 22 rende stabili i form basati sui signals, con alberi di campi tipizzati e validazione guidata da schema."
+      },
+      "service": {
+        "title": "Dependency Injection moderna",
+        "description": "@Service() è il decorator ergonomico per i servizi forniti alla root nello stile signal-first di Angular."
+      }
+    },
+    "signals": {
+      "title": "I Signals rendono esplicito lo stato",
+      "description": "Il boilerplate privilegia la reattività fine-grained. signal() possiede lo stato mutabile, computed() deriva lo stato e le primitive più recenti estendono il modello ai dati dipendenti e asincroni.",
+      "button": "Aggiorna il signal",
+      "computed": "Questo valore viene derivato automaticamente dal signal precedente. Non serve richiamare manualmente la change detection."
+    },
+    "rendering": {
+      "title": "Render veloce, hydration intenzionale",
+      "description": "Il moderno modello di rendering di Angular combina SSR, hydration e incremental hydration. Le viste differibili possono tenere il codice fuori dal percorso critico mentre i trigger di hydration decidono quando un'isola diventa interattiva.",
+      "ssrTitle": "Rendering server-side",
+      "ssrDescription": "Genera HTML significativo sul server per un primo rendering rapido, SEO e un'esperienza di caricamento resiliente.",
+      "hydrationTitle": "Hydration completa",
+      "hydrationDescription": "Angular riutilizza il DOM generato dal server e ripristina il comportamento dell'applicazione nel browser. Event Replay protegge le interazioni avvenute prima del completamento della hydration.",
+      "deferTitle": "Incremental hydration",
+      "deferDescription": "I confini @defer possono essere renderizzati sul server e idratati in un secondo momento. Trigger come viewport, interaction e idle spostano il lavoro non critico fuori dall'avvio.",
+      "liveDemo": "Dimostrazione live di @defer",
+      "loading": "Caricamento dell'isola differita…",
+      "error": "Non è stato possibile caricare l'isola differita."
+    },
+    "data": {
+      "title": "I dati asincroni diventano stato reattivo",
+      "description": "Le Resource API di Angular fanno ora parte del toolbox stabile basato sui signals. Usale quando i valori asincroni devono partecipare direttamente allo stato reattivo dell'interfaccia.",
+      "resource": "resource() gestisce operazioni asincrone come dipendenze basate sui signals. Espone valore, stato, caricamento ed errore.",
+      "httpResource": "httpResource() si basa su HttpClient, quindi le richieste rimangono collegate agli interceptor e allo stack HTTP di Angular mentre il loro stato viene esposto come signal.",
+      "linkedSignal": "linkedSignal() modella uno stato scrivibile che dipende da un altro stato, mantenendo coerenti selezioni e scelte derivate quando cambia la sorgente."
+    },
+    "forms": {
+      "title": "Form costruiti sui Signals",
+      "description": "I Signal Forms sono stabili in Angular 22 e sono pensati per le nuove applicazioni basate sui signals. Un modello signal diventa un albero di campi tipizzato, mentre gli schema centralizzano validazione e regole reattive dei campi.",
+      "note": "I Reactive Forms rimangono disponibili e sono ancora una scelta solida per applicazioni esistenti. I Signal Forms offrono anche interoperabilità per migrazioni progressive."
+    },
+    "di": {
+      "title": "Dependency Injection moderna",
+      "description": "Angular 22 introduce @Service() come scorciatoia ergonomica per un servizio fornito alla root. Si abbina naturalmente a inject() ed evita la verbosità di @Injectable({ providedIn: 'root' }) nel caso comune dei singleton.",
+      "note": "Continua a usare @Injectable quando servono constructor injection, scope diversi dalla root o configurazioni avanzate dei provider. @Service() è lo stile predefinito utilizzato da questo boilerplate."
+    },
+    "tooling": {
+      "title": "Un workflow pronto per progetti reali"
+    },
+    "footer": "Costruito come riferimento Angular vivente. Aggiorna il framework e poi aggiorna questa pagina per documentare le nuove funzionalità.",
+    "backToTop": "Torna all'inizio"
   }
 }
