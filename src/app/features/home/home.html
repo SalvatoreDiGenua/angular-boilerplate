@@ -27,7 +27,7 @@
         (click)="language.toggle()"
         [attr.aria-label]="'home.changeLanguage' | transloco"
       >
-        {{ language.language() | uppercase }}
+        {{ language.language() }}
       </button>
       <a
         routerLink="/"
