@@ -55,8 +55,6 @@ export const appConfig: ApplicationConfig = {
       }),
     ),
     provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
-    // Angular 22 enables incremental hydration through provideClientHydration().
-    // Event Replay is enabled automatically as part of incremental hydration.
     provideClientHydration(),
     provideTransloco({
       config: {

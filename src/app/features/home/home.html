@@ -63,13 +63,16 @@
             </div>
             <span class="size-2.5 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50"></span>
           </div>
-          <pre class="mt-5 overflow-x-auto text-sm leading-7 text-slate-300"><code>provideZonelessChangeDetection()
+          <pre class="mt-5 overflow-x-auto text-sm leading-7 text-slate-300">
+            <code>
+provideZonelessChangeDetection()
 provideClientHydration()
 provideRouter(routes, ...)
 provideHttpClient(...)
-
 signal → computed → resource
-@defer → hydrate → interactive</code></pre>
+&#64;defer → hydrate → interactive
+            </code>
+          </pre>
         </div>
       </div>
     </div>
@@ -123,12 +126,16 @@ signal → computed → resource
           </div>
         </div>
 
-        <pre class="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/20 p-5 text-sm leading-7 text-slate-300"><code>readonly count = signal(42);
+        <pre class="mt-5 overflow-x-auto rounded-2xl border border-white/10 bg-black/20 p-5 text-sm leading-7 text-slate-300">
+          <code>
+readonly count = signal(42);
 readonly doubled = computed(() =&gt; count() * 2);
 
 // linkedSignal() keeps dependent state coherent
 // resource() manages async state as signals
-// httpResource() connects that model to HttpClient</code></pre>
+// httpResource() connects that model to HttpClient
+          </code>
+        </pre>
       </div>
     </div>
   </section>
@@ -153,7 +160,7 @@ readonly doubled = computed(() =&gt; count() * 2);
           <p class="mt-3 text-sm leading-6 text-slate-400">{{ 'home.rendering.hydrationDescription' | transloco }}</p>
         </article>
         <article class="rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-6">
-          <span class="text-xs font-bold text-cyan-300">@defer</span>
+          <span class="text-xs font-bold text-cyan-300">&#64;defer</span>
           <h3 class="mt-4 text-xl font-bold">{{ 'home.rendering.deferTitle' | transloco }}</h3>
           <p class="mt-3 text-sm leading-6 text-slate-300">{{ 'home.rendering.deferDescription' | transloco }}</p>
         </article>
@@ -216,13 +223,16 @@ readonly doubled = computed(() =&gt; count() * 2);
         <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.forms.description' | transloco }}</p>
       </div>
       <div class="rounded-3xl border border-white/10 bg-slate-900 p-6 sm:p-8">
-        <pre class="overflow-x-auto text-sm leading-7 text-slate-300"><code>const model = signal({ email: '' });
-const profile = form(model, (path) =&gt; {
+        <pre class="overflow-x-auto text-sm leading-7 text-slate-300">
+          <code>
+const model = signal(&#123; email: '' &#125;);
+const profile = form(model, (path) =&gt; &#123;
   required(path.email);
   email(path.email);
-});
-
-&lt;input [formField]="profile.email" /&gt;</code></pre>
+&#125;);
+&lt;input [formField]="profile.email" /&gt;
+          </code>
+        </pre>
         <p class="mt-5 text-sm leading-6 text-slate-400">{{ 'home.forms.note' | transloco }}</p>
       </div>
     </div>
@@ -236,12 +246,16 @@ const profile = form(model, (path) =&gt; {
         <p class="mt-5 text-lg leading-8 text-slate-400">{{ 'home.di.description' | transloco }}</p>
       </div>
       <div class="mt-10 rounded-3xl border border-white/10 bg-slate-900 p-6 sm:p-8">
-        <pre class="overflow-x-auto text-sm leading-7 text-slate-300"><code>import { Service, inject } from '@angular/core';
+        <pre class="overflow-x-auto text-sm leading-7 text-slate-300">
+          <code>
+import &#123; Service, inject &#125; from '@angular/core';
 
-@Service()
-export class DataClient {
+&#64;Service()
+export class DataClient &#123;
   private readonly http = inject(HttpClient);
-}</code></pre>
+&#125;
+          </code>
+        </pre>
         <p class="mt-5 max-w-3xl text-sm leading-6 text-slate-400">{{ 'home.di.note' | transloco }}</p>
       </div>
     </div>
@@ -252,9 +266,10 @@ export class DataClient {
       <p class="text-xs font-bold tracking-[0.2em] text-cyan-300 uppercase">07 · Tooling</p>
       <h2 id="tooling-title" class="mt-3 text-4xl font-black tracking-tight sm:text-5xl">{{ 'home.tooling.title' | transloco }}</h2>
       <div class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        @for (item of ['Angular CLI', 'Vitest', 'ESLint', 'Prettier + Tailwind']; track item) {
-          <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">{{ item }}</div>
-        }
+        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">Angular CLI</div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">Vitest</div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">ESLint</div>
+        <div class="rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-sm font-semibold text-slate-200">Prettier + Tailwind</div>
       </div>
     </div>
   </section>
