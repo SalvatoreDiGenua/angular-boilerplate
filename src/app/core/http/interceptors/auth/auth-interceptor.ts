@@ -1,9 +1,9 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { AuthService } from '../../../auth/auth.service';
+import { Auth } from '../../../auth/auth';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = inject(AuthService).accessToken();
+  const token = inject(Auth).accessToken();
 
   if (!token || req.url.startsWith('/')) {
     return next(req);

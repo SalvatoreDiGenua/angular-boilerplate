@@ -1,8 +1,8 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, Service, signal } from '@angular/core';
 import type { AuthSession, AuthUser } from './auth.types';
 
-@Injectable({ providedIn: 'root' })
-export class AuthService {
+@Service()
+export class Auth {
   private readonly sessionState = signal<AuthSession>({
     user: null,
     accessToken: null,
@@ -10,8 +10,8 @@ export class AuthService {
 
   readonly user = computed(() => this.sessionState().user);
   readonly accessToken = computed(() => this.sessionState().accessToken);
-  readonly isAuthenticated = computed(() => this.user() !== null);
 
+  readonly isAuthenticated = computed(() => this.user() !== null);
   setSession(session: AuthSession): void {
     this.sessionState.set(session);
   }

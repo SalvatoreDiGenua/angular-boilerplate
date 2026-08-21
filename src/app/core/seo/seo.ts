@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { inject, Injectable } from '@angular/core';
+import { inject, Service } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 export interface SeoConfig {
@@ -9,8 +9,8 @@ export interface SeoConfig {
   robots?: string;
 }
 
-@Injectable({ providedIn: 'root' })
-export class SeoService {
+@Service()
+export class Seo {
   private readonly document = inject(DOCUMENT);
   private readonly meta = inject(Meta);
   private readonly title = inject(Title);
@@ -32,7 +32,9 @@ export class SeoService {
   }
 
   setCanonical(url: string): void {
-    let link = this.document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    let link = this.document.head.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
 
     if (!link) {
       link = this.document.createElement('link');
@@ -43,17 +45,25 @@ export class SeoService {
     link.href = url;
   }
 
-  setOpenGraph(config: { title?: string; description?: string; image?: string; url?: string }): void {
-    if (config.title !== undefined) {
+  setOpenGraph(config: {
+    title?: string;
+    description?: string;
+    image?: string;
+    url?: string;
+  }): void {
+    if (config.title) {
       this.meta.updateTag({ property: 'og:title', content: config.title });
     }
-    if (config.description !== undefined) {
-      this.meta.updateTag({ property: 'og:description', content: config.description });
+    if (config.description) {
+      this.meta.updateTag({
+        property: 'og:description',
+        content: config.description,
+      });
     }
-    if (config.image !== undefined) {
+    if (config.image) {
       this.meta.updateTag({ property: 'og:image', content: config.image });
     }
-    if (config.url !== undefined) {
+    if (config.url) {
       this.meta.updateTag({ property: 'og:url', content: config.url });
     }
   }

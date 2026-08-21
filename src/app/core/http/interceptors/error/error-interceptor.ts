@@ -1,10 +1,10 @@
 import { HttpErrorResponse, HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { catchError, throwError } from 'rxjs';
-import { ApiErrorService } from '../../../services/api-error.service';
+import { ApiError } from '../../../services/api-error';
 
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
-  const errors = inject(ApiErrorService);
+  const errors = inject(ApiError);
 
   return next(req).pipe(
     catchError((error: unknown) => {

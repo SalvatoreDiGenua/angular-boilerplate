@@ -5,12 +5,7 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   template: `
-    <a
-      class="skip-link"
-      href="#main-content"
-    >
-      Skip to main content
-    </a>
+    <a class="skip-link" href="#main-content"> Skip to main content </a>
     <router-outlet />
   `,
   styles: `

@@ -1,7 +1,15 @@
-<main id="main-content" class="min-h-dvh bg-slate-50 px-6 py-16 text-slate-900 dark:bg-slate-950 dark:text-slate-50">
-  <section class="mx-auto flex max-w-4xl flex-col gap-8" aria-labelledby="page-title">
+<main
+  id="main-content"
+  class="min-h-dvh bg-slate-50 px-6 py-16 text-slate-900 dark:bg-slate-950 dark:text-slate-50"
+>
+  <section
+    class="mx-auto flex max-w-4xl flex-col gap-8"
+    aria-labelledby="page-title"
+  >
     <div>
-      <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-300">
+      <p
+        class="mb-3 text-sm font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-300"
+      >
         Angular 22 boilerplate
       </p>
       <h1 id="page-title" class="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -12,9 +20,24 @@
       </p>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-label="Core features">
-      @for (feature of ['SSR', 'i18n', 'Tailwind CSS', 'Vitest', 'Signals', 'HTTP interceptors']; track feature) {
-        <article class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+    <div
+      class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+      aria-label="Core features"
+    >
+      @for (
+        feature of [
+          'SSR',
+          'i18n',
+          'Tailwind CSS',
+          'Vitest',
+          'Signals',
+          'HTTP interceptors',
+        ];
+        track feature
+      ) {
+        <article
+          class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+        >
           <h2 class="font-semibold">{{ feature }}</h2>
         </article>
       }

@@ -2,10 +2,6 @@
   "name": "angular-boilerplate",
   "version": "1.0.0",
   "author": "Salvatore Di Genua",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SalvatoreDiGenua/angular-boilerplate.git"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",

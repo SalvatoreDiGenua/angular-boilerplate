@@ -1,10 +1,10 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID, Injectable, inject, signal } from '@angular/core';
+import { PLATFORM_ID, inject, signal, Service } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 
 export type SupportedLanguage = 'it' | 'en';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class Language {
   private readonly transloco = inject(TranslocoService);
   private readonly document = inject(DOCUMENT);

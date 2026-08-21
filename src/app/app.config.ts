@@ -6,8 +6,11 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import {
+  provideClientHydration,
+  withEventReplay,
+} from '@angular/platform-browser';
 import {
   provideRouter,
   withComponentInputBinding,
@@ -24,11 +27,21 @@ import { TranslocoHttpLoader } from './core/i18n/transloco-loader';
 
 class NoopStorage implements Storage {
   readonly length = 0;
-  clear(): void {}
-  getItem(): string | null { return null; }
-  key(): string | null { return null; }
-  removeItem(): void {}
-  setItem(): void {}
+  clear(): void {
+    //
+  }
+  getItem(): string | null {
+    return null;
+  }
+  key(): string | null {
+    return null;
+  }
+  removeItem(): void {
+    //
+  }
+  setItem(): void {
+    //
+  }
 }
 
 export const appConfig: ApplicationConfig = {
@@ -44,10 +57,7 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'top',
       }),
     ),
-    provideHttpClient(
-      withFetch(),
-      withInterceptors([authInterceptor, errorInterceptor]),
-    ),
+    provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
     provideClientHydration(withEventReplay()),
     provideTransloco({
       config: {

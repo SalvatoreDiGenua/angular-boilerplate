@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Service, signal } from '@angular/core';
 
 export interface ApiErrorState {
   status: number;
@@ -6,8 +6,8 @@ export interface ApiErrorState {
   url: string;
 }
 
-@Injectable({ providedIn: 'root' })
-export class ApiErrorService {
+@Service()
+export class ApiError {
   readonly error = signal<ApiErrorState | null>(null);
 
   report(error: ApiErrorState): void {
