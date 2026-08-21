@@ -95,6 +95,15 @@
     "tooling": {
       "title": "A workflow ready for your project"
     },
+    "author": {
+      "eyebrow": "Author",
+      "title": "Projects and libraries by Salvatore Di Genua",
+      "description": "This boilerplate is a personal foundation for my Angular projects. My GitHub profile contains the other applications and libraries I build and maintain.",
+      "profileCta": "Visit GitHub profile",
+      "libraryTitle": "ngx-request-lock",
+      "libraryDescription": "An Angular library that locks UI controls during the lifecycle of HTTP requests and coordinates multiple elements through a shared requestId.",
+      "libraryCta": "Open repository"
+    },
     "footer": "Use this page as a reference when you update Angular. Keep the examples aligned with the APIs adopted by the boilerplate.",
     "backToTop": "Back to top"
   }
