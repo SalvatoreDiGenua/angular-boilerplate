@@ -1,59 +1,105 @@
-# AngularBoilerplate
+# Angular Boilerplate
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.2.
+Personal Angular 22 starter for applications created from this repository.
 
-## Development server
+The boilerplate intentionally contains **application infrastructure**, not business logic.
 
-To start a local development server, run:
+## Included
 
-```bash
-ng serve
+- Angular 22 standalone APIs and signals
+- Zoneless change detection
+- Router with component input binding, View Transitions and scroll restoration
+- SSR + prerendering + hydration + event replay
+- Fetch-backed `HttpClient`
+- Functional HTTP auth/error interceptors
+- Signal-based authentication service and reusable route guard
+- Transloco i18n (`en` / `it`) with persisted language selection
+- SSR-safe SEO service for title, description, robots, canonical and Open Graph metadata
+- Tailwind CSS 4
+- Vitest + Angular TestBed
+- ESLint + Prettier
+- Accessibility baseline: skip link, focus-visible styles, reduced-motion support and semantic starter markup
+- Mobile-first starter page demonstrating the architecture
+
+## Architecture
+
+```text
+src/app/
+├── core/
+│   ├── auth/
+│   ├── http/
+│   │   └── interceptors/
+│   ├── i18n/
+│   ├── seo/
+│   └── services/
+├── features/
+│   └── home/
+├── app.config.ts
+├── app.config.server.ts
+├── app.routes.ts
+└── app.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Add business/domain code under `features/`. Keep reusable infrastructure in `core/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Development
 
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+For LAN development:
 
 ```bash
-ng generate --help
+npm run start-local-machine
 ```
 
-## Building
-
-To build the project run:
+## Quality
 
 ```bash
-ng build
+npm run build
+npm test
+npm run lint
+npm run format:check
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Vitest can also be run directly:
 
 ```bash
-ng test
+npm run test:vitest:watch
+npm run test:vitest:coverage
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## SSR
 
 ```bash
-ng e2e
+npm run build
+npm run serve:ssr
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The generated SSR server is under `dist/angular-boilerplate/server`.
 
-## Additional Resources
+## SSG / prerender output
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run build
+npm run serve:ssg
+```
+
+## Cleaning build artifacts
+
+```bash
+npm run clean
+```
+
+## Creating a new feature
+
+Use Angular CLI generators and keep feature code isolated:
+
+```bash
+ng generate component features/example/example --standalone
+ng generate service features/example/example
+```
+
+Authentication, HTTP, i18n and SEO are deliberately provided as reusable foundations; application-specific API contracts, login flows and domain models should be implemented by the project created from this boilerplate.
