@@ -18,8 +18,9 @@
     "lint": "ng lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "serve:ssg": "npx http-server dist/portfolio/browser -p 8080",
-    "serve:ssr": "node dist/portfolio/server/server.mjs"
+    "clean": "npx rimraf .angular dist out-tsc",
+    "serve:ssg": "npx http-server dist/angular-boilerplate/browser -p 8080",
+    "serve:ssr": "node dist/angular-boilerplate/server/server.mjs"
   },
   "dependencies": {
     "@angular/common": "^22.1.0",
