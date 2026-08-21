@@ -1,6 +1,6 @@
 {
   "name": "angular-boilerplate",
-  "version": "1.0.0",
+  "version": "22.1.0",
   "author": "Salvatore Di Genua",
   "scripts": {
     "ng": "ng",
