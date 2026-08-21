@@ -68,7 +68,6 @@ Vitest can also be run directly:
 
 ```bash
 npm run test:vitest:watch
-npm run test:vitest:coverage
 ```
 
 ## SSR
