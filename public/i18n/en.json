@@ -5,75 +5,97 @@
       "architecture": "Architecture",
       "signals": "Signals",
       "rendering": "Rendering",
-      "data": "Data"
+      "data": "Data",
+      "forms": "Forms",
+      "di": "Dependency Injection"
     },
     "changeLanguage": "Change language",
     "hero": {
-      "title": "A living showcase for modern Angular",
-      "description": "This boilerplate is designed to stay aligned with the latest Angular capabilities: signal-first state, zoneless change detection, SSR, hydration, incremental hydration, deferrable views and reactive data APIs.",
+      "title": "A boilerplate built for modern Angular",
+      "description": "A ready-to-use application foundation with Signals, zoneless change detection, SSR, hydration, deferrable views, and reactive data APIs.",
       "primary": "Explore Signals",
-      "secondary": "See hydration in action",
+      "secondary": "Explore hydration",
       "badge1": "Standalone APIs",
       "badge2": "SSR + hydration",
       "badge3": "Tailwind + Vitest",
       "configCaption": "The application foundation"
     },
     "architecture": {
-      "title": "An application foundation, not an empty starter",
-      "description": "The boilerplate brings together the infrastructure that repeatedly appears in production Angular applications, while keeping business logic intentionally empty. Every section below is a documented starting point you can fork and extend."
+      "title": "An application foundation to build on",
+      "description": "The boilerplate collects the infrastructure common to modern Angular applications and leaves business logic to the project created from the fork. This page shows how the main architectural choices work."
     },
     "features": {
-      "signals": { "title": "Signal-first state", "description": "Signals, computed state and modern reactive primitives provide a direct model for local and shared application state." },
-      "defer": { "title": "Deferrable views", "description": "The built-in control flow can defer dependencies and hydrate interactive islands only when users need them." },
-      "hydration": { "title": "SSR + hydration", "description": "Server-rendered HTML becomes interactive in the browser without throwing away the server result." },
-      "resources": { "title": "Resource APIs", "description": "resource() and httpResource() bring asynchronous state into the signal model with loading, error and value states." },
-      "forms": { "title": "Signal Forms", "description": "Angular 22 makes signal-based forms stable, with typed field trees and schema-driven validation." },
-      "service": { "title": "Modern DI", "description": "@Service() is the ergonomic root-provided service decorator for the signal-first Angular style." }
+      "signals": {
+        "title": "Signal-based state",
+        "description": "signal() manages local state, computed() derives values, and reactive primitives extend the same model to dependent and asynchronous data."
+      },
+      "defer": {
+        "title": "Deferrable views",
+        "description": "@defer delays non-essential dependencies and moves work out of the application's initial loading path."
+      },
+      "hydration": {
+        "title": "SSR and hydration",
+        "description": "Angular can generate HTML on the server and reuse it during browser hydration instead of rebuilding the page from scratch."
+      },
+      "resources": {
+        "title": "Resource APIs",
+        "description": "resource() and httpResource() connect asynchronous data to the Signals model with explicit value, loading, and error states."
+      },
+      "forms": {
+        "title": "Signal Forms",
+        "description": "Signal Forms provide a Signals-based model for building typed forms and managing field state and validation."
+      },
+      "service": {
+        "title": "Modern dependency injection",
+        "description": "@Service() provides a compact syntax for root-provided services, while @Injectable remains available for more specific configurations."
+      }
     },
     "signals": {
       "title": "Signals make state explicit",
-      "description": "The boilerplate favors fine-grained reactivity. signal() owns mutable state, computed() derives state, and newer primitives extend the model to dependent and asynchronous data.",
+      "description": "signal() holds mutable state and computed() derives other values from it. Angular updates the parts of the UI that depend on these Signals when their value changes.",
       "button": "Update signal",
-      "computed": "This value is derived automatically from the signal above. No manual change-detection call is required."
+      "computed": "This value derives from the signal above and updates when that signal changes."
     },
     "rendering": {
-      "title": "Render fast, hydrate intentionally",
-      "description": "Angular's modern rendering model combines SSR with hydration and incremental hydration. Deferrable views can keep code out of the critical path while hydrate triggers decide when an island becomes interactive.",
-      "ssrTitle": "Server rendering",
-      "ssrDescription": "Render meaningful HTML on the server for fast first paint, SEO and a resilient loading experience.",
-      "hydrationTitle": "Full hydration",
-      "hydrationDescription": "Angular reuses server-rendered DOM and restores application behavior in the browser. Event replay protects interactions that happen before hydration finishes.",
+      "title": "Render on the server, hydrate when needed",
+      "description": "SSR, hydration, and incremental hydration let you choose when work moves from the server to the browser. With @defer, you can also keep non-essential code out of the initial load.",
+      "ssrTitle": "Server-side rendering",
+      "ssrDescription": "The server generates meaningful HTML before the browser runs the application. This improves the initial render and provides readable content before hydration completes.",
+      "hydrationTitle": "Hydration",
+      "hydrationDescription": "Angular reuses the DOM produced by the server and connects the application behavior in the browser. Event Replay preserves interactions that happen before hydration finishes.",
       "deferTitle": "Incremental hydration",
-      "deferDescription": "@defer boundaries can be rendered on the server and hydrated later. Triggers such as viewport, interaction and idle let you move non-critical work away from startup.",
-      "liveDemo": "Live @defer demonstration",
-      "loading": "Loading the deferred island…",
-      "error": "The deferred island could not be loaded.",
-      "deferredEyebrow": "Deferred island",
+      "deferDescription": "With incremental hydration, @defer blocks can be rendered on the server and hydrated later. Triggers such as viewport, interaction, and idle determine when a section becomes interactive.",
+      "liveDemo": "Live @defer demo",
+      "loading": "Loading the deferred section…",
+      "error": "The deferred section could not be loaded.",
+      "deferredEyebrow": "Deferred section",
       "deferredTitle": "A real @defer boundary",
-      "deferredBadge": "Loaded on viewport",
-      "deferredDescription": "This component is intentionally loaded through Angular's deferrable-view pipeline. With incremental hydration, the server can render it while the browser postpones its hydration until the configured trigger fires.",
-      "deferredButton": "Interaction replay demo",
-      "deferredNote": "Signal state survives the hydrated component lifecycle."
+      "deferredBadge": "Loaded in viewport",
+      "deferredDescription": "This section loads through Angular's deferrable-view system. With incremental hydration, the server can produce the content while the browser waits to hydrate it until the configured trigger fires.",
+      "deferredButton": "Try the interaction",
+      "deferredNote": "The component keeps its Signals-based state throughout hydration."
     },
     "data": {
       "title": "Async data becomes reactive state",
-      "description": "Angular's Resource APIs are now part of the stable signal-based toolbox. Use them when asynchronous values should participate directly in reactive UI state.",
-      "resource": "resource() manages asynchronous operations as a signal-based dependency. It exposes value, status, loading and error state.",
-      "httpResource": "httpResource() builds on HttpClient, so requests remain connected to interceptors and the Angular HTTP stack while exposing their state as signals.",
-      "linkedSignal": "linkedSignal() models writable state that depends on other state, keeping selections and derived choices coherent when their source changes."
+      "description": "Resource APIs connect asynchronous operations to Signals. They are useful when the result of a request should participate directly in the UI state.",
+      "resource": "resource() represents a Signals-driven asynchronous operation and exposes its value, status, loading, and error state.",
+      "httpResource": "httpResource() connects HttpClient with the Resource API model. Requests continue to use the application's HTTP infrastructure and interceptors.",
+      "linkedSignal": "linkedSignal() creates writable state connected to another state. It is useful when a user choice should follow a source that can change."
     },
     "forms": {
       "title": "Forms built on Signals",
-      "description": "Signal Forms are stable in Angular 22 and are designed for new signal-based applications. A signal model becomes a typed field tree, while schemas centralize validation and reactive field rules.",
-      "note": "Reactive Forms remain available and are still a strong choice for existing applications. Signal Forms also provide interoperability for gradual migrations."
+      "description": "Signal Forms introduce a reactive form model for new applications. A Signal-based model can become a typed field tree with declarative validation rules.",
+      "note": "Reactive Forms remain available and are a solid choice for existing applications. You can adopt Signal Forms gradually when the project is ready."
     },
     "di": {
       "title": "Modern dependency injection",
-      "description": "Angular 22 introduces @Service() as the ergonomic shorthand for a root-provided service. It pairs naturally with inject() and avoids the ceremony of @Injectable({ providedIn: 'root' }) for the common singleton case.",
-      "note": "Keep @Injectable when you need constructor injection, non-root scopes or advanced provider configuration. @Service() is the default style used by this boilerplate."
+      "description": "@Service() is the compact syntax for a root-provided service. For the common case, it removes the explicit @Injectable({ providedIn: 'root' }) configuration and works naturally with inject() for dependencies.",
+      "note": "Use @Injectable when you need constructor injection, a non-root scope, or advanced provider configuration."
     },
-    "tooling": { "title": "A workflow ready for real projects" },
-    "footer": "Built as a living Angular reference. Update the framework, then update this page to document the new capabilities.",
+    "tooling": {
+      "title": "A workflow ready for your project"
+    },
+    "footer": "Use this page as a reference when you update Angular. Keep the examples aligned with the APIs adopted by the boilerplate.",
     "backToTop": "Back to top"
   }
 }
