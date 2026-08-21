@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, linkedSignal, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  linkedSignal,
+  signal,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Seo } from '../../../core/seo/seo';
 

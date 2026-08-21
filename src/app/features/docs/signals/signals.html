@@ -1,51 +1,135 @@
 <main class="min-h-dvh bg-slate-950 text-slate-100 selection:bg-violet-400/30">
   <div class="mx-auto max-w-6xl px-5 py-8 sm:px-8 lg:px-10">
-    <nav class="mb-16 flex flex-wrap items-center justify-between gap-4" aria-label="Documentation">
-      <a routerLink="/" class="text-sm font-bold tracking-tight text-white">angular-boilerplate</a>
+    <nav
+      class="mb-16 flex flex-wrap items-center justify-between gap-4"
+      aria-label="Documentation"
+    >
+      <a routerLink="/" class="text-sm font-bold tracking-tight text-white">
+        angular-boilerplate
+      </a>
       <div class="flex flex-wrap gap-2 text-sm">
-        <a routerLink="/docs" class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white">Architecture</a>
-        <a routerLink="/docs/signals" aria-current="page" class="rounded-full bg-white px-4 py-2 font-semibold text-slate-950">Signals</a>
-        <a routerLink="/docs/rendering" class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white">Rendering</a>
+        <a
+          routerLink="/docs"
+          class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white"
+        >
+          Architecture
+        </a>
+        <a
+          routerLink="/docs/signals"
+          aria-current="page"
+          class="rounded-full bg-white px-4 py-2 font-semibold text-slate-950"
+        >
+          Signals
+        </a>
+        <a
+          routerLink="/docs/rendering"
+          class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white"
+        >
+          Rendering
+        </a>
       </div>
     </nav>
 
     <header class="max-w-4xl">
-      <p class="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-violet-300">Signal-first Angular</p>
-      <h1 class="text-4xl font-bold tracking-[-0.03em] sm:text-6xl">State becomes explicit, local and reactive.</h1>
+      <p
+        class="mb-4 text-sm font-bold tracking-[0.2em] text-violet-300 uppercase"
+      >
+        Signal-first Angular
+      </p>
+      <h1 class="text-4xl font-bold tracking-[-0.03em] sm:text-6xl">
+        State becomes explicit, local and reactive.
+      </h1>
       <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-        Angular's signal APIs are now the preferred foundation for new stateful code. The boilerplate keeps the
-        mental model small: writable signals hold state, computed values derive it, linkedSignal preserves writable
-        relationships, and resources connect asynchronous work to that same reactive graph.
+        Angular's signal APIs are now the preferred foundation for new stateful
+        code. The boilerplate keeps the mental model small: writable signals
+        hold state, computed values derive it, linkedSignal preserves writable
+        relationships, and resources connect asynchronous work to that same
+        reactive graph.
       </p>
     </header>
 
-    <section class="mt-14 rounded-2xl border border-violet-300/20 bg-violet-300/5 p-6 sm:p-8" aria-labelledby="demo-title">
+    <section
+      class="mt-14 rounded-2xl border border-violet-300/20 bg-violet-300/5 p-6 sm:p-8"
+      aria-labelledby="demo-title"
+    >
       <div class="flex flex-wrap items-end justify-between gap-6">
         <div>
-          <p class="text-xs font-bold uppercase tracking-[0.16em] text-violet-300">Live signal</p>
-          <h2 id="demo-title" class="mt-2 text-2xl font-semibold">The UI reads the signal directly.</h2>
+          <p
+            class="text-xs font-bold tracking-[0.16em] text-violet-300 uppercase"
+          >
+            Live signal
+          </p>
+          <h2 id="demo-title" class="mt-2 text-2xl font-semibold">
+            The UI reads the signal directly.
+          </h2>
         </div>
-        <button type="button" (click)="increment()" class="min-h-11 rounded-lg bg-violet-300 px-5 py-2.5 font-semibold text-slate-950 hover:bg-violet-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300">
+        <button
+          type="button"
+          (click)="increment()"
+          class="min-h-11 rounded-lg bg-violet-300 px-5 py-2.5 font-semibold text-slate-950 hover:bg-violet-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-300"
+        >
           Increment count
         </button>
       </div>
       <div class="mt-8 grid gap-3 sm:grid-cols-2">
-        <div class="rounded-xl bg-black/20 p-5"><p class="text-sm text-slate-400">signal()</p><p class="mt-1 text-4xl font-bold">{{ count() }}</p></div>
-        <div class="rounded-xl bg-black/20 p-5"><p class="text-sm text-slate-400">linkedSignal()</p><p class="mt-1 text-4xl font-bold">{{ doubled() }}</p></div>
+        <div class="rounded-xl bg-black/20 p-5">
+          <p class="text-sm text-slate-400">signal()</p>
+          <p class="mt-1 text-4xl font-bold">{{ count() }}</p>
+        </div>
+        <div class="rounded-xl bg-black/20 p-5">
+          <p class="text-sm text-slate-400">linkedSignal()</p>
+          <p class="mt-1 text-4xl font-bold">{{ doubled() }}</p>
+        </div>
       </div>
     </section>
 
     <section class="mt-16 grid gap-5 lg:grid-cols-2" aria-label="Signal APIs">
-      @for (item of [
-        { name: 'signal()', tag: 'State', text: 'A writable reactive value. Prefer it for local component state and small application state instead of introducing an Observable for every interaction.' },
-        { name: 'computed()', tag: 'Derived state', text: 'Creates a read-only value derived from other signals. Dependencies are tracked automatically and recomputation stays focused.' },
-        { name: 'linkedSignal()', tag: 'Writable derived state', text: 'Keeps a value linked to a reactive source while still allowing local writes. It is useful when a selection or form value should reset when its source changes.' },
-        { name: 'resource()', tag: 'Async state', text: 'Connects asynchronous loaders to signals and exposes value, loading and error state. Resource results can be transferred from SSR to hydration with a stable id.' },
-        { name: 'httpResource()', tag: 'HTTP + signals', text: 'Builds on HttpClient and exposes request state as signals. Existing interceptors and the Angular HTTP stack continue to apply.' },
-        { name: 'Signal Forms', tag: 'Forms', text: 'Angular 22+ provides stable signal-based forms with typed field trees, schema validation, reactive field state and a structured submission lifecycle.' }
-      ]; track item.name) {
-        <article class="rounded-2xl border border-white/10 bg-white/[0.035] p-6">
-          <div class="flex items-center justify-between gap-4"><h2 class="text-lg font-semibold text-white">{{ item.name }}</h2><span class="rounded-full bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-300">{{ item.tag }}</span></div>
+      @for (
+        item of [
+          {
+            name: 'signal()',
+            tag: 'State',
+            text: 'A writable reactive value. Prefer it for local component state and small application state instead of introducing an Observable for every interaction.',
+          },
+          {
+            name: 'computed()',
+            tag: 'Derived state',
+            text: 'Creates a read-only value derived from other signals. Dependencies are tracked automatically and recomputation stays focused.',
+          },
+          {
+            name: 'linkedSignal()',
+            tag: 'Writable derived state',
+            text: 'Keeps a value linked to a reactive source while still allowing local writes. It is useful when a selection or form value should reset when its source changes.',
+          },
+          {
+            name: 'resource()',
+            tag: 'Async state',
+            text: 'Connects asynchronous loaders to signals and exposes value, loading and error state. Resource results can be transferred from SSR to hydration with a stable id.',
+          },
+          {
+            name: 'httpResource()',
+            tag: 'HTTP + signals',
+            text: 'Builds on HttpClient and exposes request state as signals. Existing interceptors and the Angular HTTP stack continue to apply.',
+          },
+          {
+            name: 'Signal Forms',
+            tag: 'Forms',
+            text: 'Angular 22+ provides stable signal-based forms with typed field trees, schema validation, reactive field state and a structured submission lifecycle.',
+          },
+        ];
+        track item.name
+      ) {
+        <article
+          class="rounded-2xl border border-white/10 bg-white/[0.035] p-6"
+        >
+          <div class="flex items-center justify-between gap-4">
+            <h2 class="text-lg font-semibold text-white">{{ item.name }}</h2>
+            <span
+              class="rounded-full bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-300"
+            >
+              {{ item.tag }}
+            </span>
+          </div>
           <p class="mt-4 leading-7 text-slate-400">{{ item.text }}</p>
         </article>
       }
@@ -53,35 +137,57 @@
 
     <section class="mt-16" aria-labelledby="code-title">
       <p class="text-sm font-semibold text-violet-300">A modern state flow</p>
-      <h2 id="code-title" class="mt-2 text-3xl font-bold">From model to async data.</h2>
-      <div class="mt-6 overflow-x-auto rounded-2xl border border-white/10 bg-[#09090b] p-5 text-sm leading-7 text-slate-300">
-        <pre><code>readonly userId = signal('42');
+      <h2 id="code-title" class="mt-2 text-3xl font-bold">
+        From model to async data.
+      </h2>
+      <div
+        class="mt-6 overflow-x-auto rounded-2xl border border-white/10 bg-[#09090b] p-5 text-sm leading-7 text-slate-300"
+      >
+        <pre>
+          <code>
+readonly userId = signal('42');
+readonly user = httpResource(() => '/api/users/' + this.userId());
 
-readonly user = httpResource(() => `/api/users/${this.userId()}`);
-
-readonly displayName = computed(() =&gt;
+readonly displayName = computed(() =>
   this.user.value()?.name ?? 'Loading…'
 );
 
-readonly formModel = signal({
+readonly formModel = signal(&#123;
   displayName: '',
   email: '',
-});
+&#125;);
 
-readonly form = form(this.formModel, (path) =&gt; {
+readonly form = form(this.formModel, (path) => &#123;
   required(path.displayName);
   email(path.email);
-});</code></pre>
+&#125;);
+          </code>
+        </pre>
       </div>
       <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-500">
-        Signal Forms are part of <code class="text-slate-300">@angular/forms/signals</code>; the boilerplate documents
-        the pattern but deliberately does not force every application to use it when an existing Reactive Forms model is a better fit.
+        Signal Forms are part of
+        <code class="text-slate-300">@angular/forms/signals</code>
+        ; the boilerplate documents the pattern but deliberately does not force
+        every application to use it when an existing Reactive Forms model is a
+        better fit.
       </p>
     </section>
 
-    <footer class="mt-20 flex flex-wrap gap-3 border-t border-white/10 pt-8 text-sm">
-      <a routerLink="/docs" class="rounded-lg border border-white/10 px-4 py-2 text-slate-300 hover:bg-white/5">← Architecture</a>
-      <a routerLink="/docs/rendering" class="rounded-lg bg-white px-4 py-2 font-semibold text-slate-950">Next: Rendering →</a>
+    <footer
+      class="mt-20 flex flex-wrap gap-3 border-t border-white/10 pt-8 text-sm"
+    >
+      <a
+        routerLink="/docs"
+        class="rounded-lg border border-white/10 px-4 py-2 text-slate-300 hover:bg-white/5"
+      >
+        ← Architecture
+      </a>
+      <a
+        routerLink="/docs/rendering"
+        class="rounded-lg bg-white px-4 py-2 font-semibold text-slate-950"
+      >
+        Next: Rendering →
+      </a>
     </footer>
   </div>
 </main>

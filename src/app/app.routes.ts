@@ -21,7 +21,9 @@ export const routes: Routes = [
   {
     path: 'docs/rendering',
     loadComponent: () =>
-      import('./features/docs/rendering/rendering').then((m) => m.DocsRendering),
+      import('./features/docs/rendering/rendering').then(
+        (m) => m.DocsRendering,
+      ),
     title: 'Rendering — Angular Boilerplate',
   },
   {
