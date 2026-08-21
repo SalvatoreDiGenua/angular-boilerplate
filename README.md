@@ -29,17 +29,17 @@ It has a second purpose: the home page is an **interactive Angular showcase**. I
 
 The home page is a single scrolling experience. Each section introduces a capability and, where useful, demonstrates it with working UI.
 
-| Area | What you can see |
-| --- | --- |
-| ⚡ Signals | `signal()`, `computed()`, `linkedSignal()`, `resource()`, `httpResource()` |
-| 💤 Deferrable views | `@defer`, placeholders, loading states and deferred components |
-| 💧 Hydration | SSR, client hydration, event replay and incremental hydration |
-| 📝 Signal Forms | signal models, `form()`, field state and validation |
-| 💉 Dependency injection | `@Service()`, `@Injectable()` and `inject()` |
-| 🌐 i18n | Italian/English translations with Transloco |
-| 🔎 SEO | title, description, robots, canonical and Open Graph metadata |
-| 🎨 UI | Tailwind CSS 4, responsive layout and accessible interactions |
-| 🧪 Quality | Vitest, ESLint, Prettier and Tailwind class sorting |
+| Area                    | What you can see                                                           |
+| ----------------------- | -------------------------------------------------------------------------- |
+| ⚡ Signals              | `signal()`, `computed()`, `linkedSignal()`, `resource()`, `httpResource()` |
+| 💤 Deferrable views     | `@defer`, placeholders, loading states and deferred components             |
+| 💧 Hydration            | SSR, client hydration, event replay and incremental hydration              |
+| 📝 Signal Forms         | signal models, `form()`, field state and validation                        |
+| 💉 Dependency injection | `@Service()`, `@Injectable()` and `inject()`                               |
+| 🌐 i18n                 | Italian/English translations with Transloco                                |
+| 🔎 SEO                  | title, description, robots, canonical and Open Graph metadata              |
+| 🎨 UI                   | Tailwind CSS 4, responsive layout and accessible interactions              |
+| 🧪 Quality              | Vitest, ESLint, Prettier and Tailwind class sorting                        |
 
 ### ⚡ Signal-based architecture
 
@@ -167,7 +167,7 @@ New features should preserve these defaults.
 
 The boilerplate includes:
 
-- Vitest and Angular TestBed
+- Angular TestBed
 - ESLint
 - Prettier
 - Tailwind class sorting
@@ -242,13 +242,7 @@ npm run format:check
 Run the test suite in watch mode:
 
 ```bash
-npm run test:vitest:watch
-```
-
-Generate a test coverage report:
-
-```bash
-npm run test:coverage
+npm run test:watch
 ```
 
 ## 🖥️ SSR
