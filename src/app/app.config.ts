@@ -1,3 +1,4 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   ApplicationConfig,
   isDevMode,
@@ -5,19 +6,19 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import {
   provideRouter,
   withComponentInputBinding,
   withInMemoryScrolling,
   withViewTransitions,
 } from '@angular/router';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { authInterceptor } from './core/http/interceptors/auth/auth-interceptor';
-import { errorInterceptor } from './core/http/interceptors/error/error-interceptor';
 import { provideTransloco } from '@jsverse/transloco';
 import { provideTranslocoPersistLang } from '@jsverse/transloco-persist-lang';
+import { routes } from './app.routes';
+import { authInterceptor } from './core/http/interceptors/auth/auth-interceptor';
+import { errorInterceptor } from './core/http/interceptors/error/error-interceptor';
 import { Language } from './core/i18n/language';
 import { TranslocoHttpLoader } from './core/i18n/transloco-loader';
 
