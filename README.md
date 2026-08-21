@@ -315,9 +315,3 @@ Created and maintained by **Salvatore Di Genua**.
 ## 🔗 Repository
 
 [GitHub](https://github.com/SalvatoreDiGenua/angular-boilerplate)
-
-## 📚 Why the README is structured this way
-
-GitHub recommends using a README to explain why a repository is useful, what users can do with it and how to get started. For longer READMEs, clear headings, short paragraphs, lists and in-page navigation improve scanning and make the important information easier to find. citeturn0search0turn0search2
-
-This README follows those principles: the project purpose comes first, the showcase is summarized early, detailed capabilities are grouped by topic, and setup commands remain easy to find. GitHub also generates an outline from Markdown headings, so an additional manual table of contents is unnecessary here. citeturn0search0
