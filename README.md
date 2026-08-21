@@ -1,26 +1,43 @@
-# Angular Boilerplate
+# Angular Boilerplate ⚡
 
 Personal Angular starter for building new applications from a consistent, modern foundation.
 
-The repository is designed to stay aligned with the latest Angular release and to expose the framework's current application patterns through a working example. It is both a **starting point for new projects** and a **living reference for modern Angular**.
+[![Angular](https://img.shields.io/badge/Angular-22-DD0031?logo=angular&logoColor=white)](https://angular.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev/)
 
-The boilerplate provides application infrastructure, not business logic. Fork it when starting a project, keep the shared foundations, and add the domain-specific code under `features/`.
+> 🚀 **A reusable foundation for new Angular applications — and a living showcase of modern Angular.**
 
-## What this project is for
+## 🎯 What this project is for
 
-Starting an Angular application usually means repeating the same decisions: application structure, HTTP configuration, authentication boundaries, internationalization, SEO, rendering, testing, formatting and accessibility defaults.
+Starting an Angular application often means repeating the same infrastructure decisions: application structure, HTTP configuration, authentication boundaries, internationalization, SEO, rendering, testing, formatting and accessibility.
 
-This repository makes those decisions once and keeps them in a form that can be reused across projects.
+This repository makes those decisions once and keeps them reusable across projects.
 
-It also serves a second purpose: the home page is an interactive documentation surface. Instead of listing Angular features only as prose, the application demonstrates how the current Angular APIs fit together in a real standalone, signal-based, SSR application.
+It has a second purpose: the home page is an **interactive Angular showcase**. Instead of listing framework features as static prose, it demonstrates how current Angular APIs fit together in a standalone, signal-based, SSR application.
 
-## What the example application demonstrates
+> 💡 **The rule:** the boilerplate provides infrastructure, not fake business logic. Fork it, keep the foundations you need, and build the domain under `features/`.
 
-The home page is a single scrolling showcase. Its sections explain the architecture and progressively demonstrate the main capabilities provided by the boilerplate.
+## ✨ What the showcase demonstrates
 
-### Signal-based architecture
+The home page is a single scrolling experience. Each section introduces a capability and, where useful, demonstrates it with working UI.
 
-The application uses Angular Signals as a core state primitive:
+| Area | What you can see |
+| --- | --- |
+| ⚡ Signals | `signal()`, `computed()`, `linkedSignal()`, `resource()`, `httpResource()` |
+| 💤 Deferrable views | `@defer`, placeholders, loading states and deferred components |
+| 💧 Hydration | SSR, client hydration, event replay and incremental hydration |
+| 📝 Signal Forms | signal models, `form()`, field state and validation |
+| 💉 Dependency injection | `@Service()`, `@Injectable()` and `inject()` |
+| 🌐 i18n | Italian/English translations with Transloco |
+| 🔎 SEO | title, description, robots, canonical and Open Graph metadata |
+| 🎨 UI | Tailwind CSS 4, responsive layout and accessible interactions |
+| 🧪 Quality | Vitest, ESLint, Prettier and Tailwind class sorting |
+
+### ⚡ Signal-based architecture
+
+Angular Signals are a core state primitive in the application:
 
 - `signal()` for writable reactive state
 - `computed()` for derived state
@@ -28,30 +45,15 @@ The application uses Angular Signals as a core state primitive:
 - `resource()` for asynchronous reactive state
 - `httpResource()` for reactive HTTP data
 
-The examples are intentionally small. The goal is to show the data flow and the API shape, not to turn the boilerplate into a sample business application.
+The examples stay deliberately small. They show the data flow and API shape without turning the boilerplate into a sample business application.
 
-### Zoneless change detection
+### 💤 `@defer` and incremental hydration
 
-The application uses Angular's zoneless change detection model instead of relying on Zone.js to discover changes.
+The showcase includes real deferred content rather than only documenting `@defer`.
 
-This keeps the example aligned with Angular's signal-first direction and makes reactive state changes explicit in the application model.
+It demonstrates the relationship between server-side rendering, hydration, deferred views, hydration triggers and event replay. The goal is to show where deferred content fits in an SSR application and how it can reduce the JavaScript that must be loaded and hydrated immediately.
 
-### `@defer` and incremental hydration
-
-The showcase includes real deferred content instead of only documenting `@defer`.
-
-It demonstrates the relationship between:
-
-- server-side rendering
-- hydration
-- `@defer` blocks
-- deferred loading
-- hydration triggers
-- event replay
-
-The purpose is to make it clear where deferred views belong in an SSR application and how they can reduce the amount of JavaScript that needs to be loaded and hydrated immediately.
-
-### SSR, prerendering and hydration
+### 💧 SSR, prerendering and hydration
 
 The project is configured for Angular's modern rendering pipeline:
 
@@ -61,40 +63,39 @@ The project is configured for Angular's modern rendering pipeline:
 - event replay
 - incremental hydration through deferred views
 
-The same application can therefore be used as a starting point for applications that need server rendering, static output or client-side rendering.
+The same foundation can support applications that need server rendering, static output or client-side rendering.
 
-### Resource APIs
+### 📦 Resource APIs
 
-The documentation explains Angular's resource model and shows how asynchronous data can be represented as reactive state.
+The documentation explains Angular's resource model and shows how asynchronous data can become reactive state.
 
-`resource()` is useful when an asynchronous operation depends on reactive parameters. `httpResource()` builds on that model for HTTP requests while remaining integrated with Angular's `HttpClient` infrastructure.
+`resource()` is useful when an asynchronous operation depends on reactive parameters. `httpResource()` builds on the same model for HTTP requests while remaining integrated with Angular's `HttpClient` infrastructure.
 
-### Signal Forms
+### 📝 Signal Forms
 
 The showcase documents Angular's signal-based forms approach and demonstrates the relationship between a signal model, `form()`, field state and validation.
 
-Reactive Forms are not removed from the platform. They remain useful, especially for existing applications. Signal Forms are included here because this boilerplate targets new, signal-oriented Angular applications.
+Reactive Forms are not removed from Angular. They remain useful, especially in existing applications. Signal Forms are included here because this boilerplate targets new, signal-oriented applications.
 
-### Modern dependency injection
+### 💉 Modern dependency injection
 
-The project uses Angular's current service patterns, including `@Service()` for root-provided services and `inject()` for dependency access.
+The project uses current service patterns, including `@Service()` for root-provided services and `inject()` for dependency access.
 
-The documentation also explains when `@Injectable()` remains appropriate, so the example does not present the shorthand as a replacement for every dependency-injection scenario.
+The documentation also explains when `@Injectable()` remains appropriate, rather than presenting `@Service()` as a universal replacement.
 
-### Routing
+### 🧭 Routing
 
-The router is configured with modern standalone APIs and includes:
+The router uses standalone APIs and includes:
 
-- standalone route configuration
 - component input binding
 - View Transitions
 - anchor scrolling
 - scroll-position restoration
 - lazy feature loading
 
-The documentation is presented as one page, so navigation between sections uses anchors rather than redirects to separate documentation routes.
+The showcase is intentionally one page, so navigation between documentation sections uses anchors instead of redirects.
 
-### HTTP infrastructure
+### 🌐 HTTP infrastructure
 
 The core HTTP layer provides a reusable foundation for application APIs:
 
@@ -103,9 +104,9 @@ The core HTTP layer provides a reusable foundation for application APIs:
 - authentication interceptor
 - centralized API error state
 
-The boilerplate does not prescribe a backend, token format or authentication provider. Those choices belong to the application created from it.
+The boilerplate does not prescribe a backend, token format or authentication provider. Those decisions belong to the application created from it.
 
-### Authentication foundation
+### 🔐 Authentication foundation
 
 The project includes a small signal-based authentication foundation:
 
@@ -115,15 +116,15 @@ The project includes a small signal-based authentication foundation:
 - logout
 - reusable authentication guard
 
-It intentionally does not contain a complete login flow. A forked application should connect this foundation to its own identity provider or backend.
+It intentionally does not contain a complete login flow. A forked application can connect this foundation to its own identity provider or backend.
 
-### Internationalization
+### 🌍 Internationalization
 
 Transloco is configured with Italian and English translations.
 
-Language selection is persisted and the application is SSR-safe. The documentation showcase itself is translated, including the interactive examples, so the repository also demonstrates how i18n can be applied to a real Angular feature rather than only to isolated strings.
+Language selection is persisted and the application is SSR-safe. The showcase itself is translated, including interactive examples, so i18n is demonstrated as part of a real feature rather than as isolated strings.
 
-### SEO
+### 🔎 SEO
 
 The core SEO service provides an SSR-safe abstraction for common document metadata:
 
@@ -135,15 +136,15 @@ The core SEO service provides an SSR-safe abstraction for common document metada
 
 Applications can extend this foundation with their own metadata strategy.
 
-### Tailwind CSS
+### 🎨 Tailwind CSS
 
-Tailwind CSS 4 is used for the showcase UI.
+Tailwind CSS 4 powers the showcase UI.
 
-The project also uses Prettier with the Tailwind CSS sorting plugin so utility classes are reordered consistently when the code is formatted.
+Prettier uses the Tailwind CSS sorting plugin so utility classes are reordered consistently during formatting.
 
-### Accessibility
+### ♿ Accessibility
 
-Accessibility is treated as part of the application baseline rather than as a final polish step.
+Accessibility is part of the baseline, not a final polish step.
 
 The starter includes:
 
@@ -156,9 +157,9 @@ The starter includes:
 
 New features should preserve these defaults.
 
-### Testing and code quality
+### 🧪 Testing and code quality
 
-The boilerplate includes a development quality baseline:
+The boilerplate includes:
 
 - Vitest and Angular TestBed
 - ESLint
@@ -166,9 +167,9 @@ The boilerplate includes a development quality baseline:
 - Tailwind class sorting
 - Angular CLI build and test tooling
 
-The goal is to make formatting, linting and testing part of the normal workflow from the first commit.
+The aim is to make formatting, linting and testing part of the normal workflow from the first commit.
 
-## Architecture
+## 🧱 Architecture
 
 ```text
 src/app/
@@ -181,33 +182,35 @@ src/app/
 │   └── services/
 ├── features/
 │   └── home/
+│       ├── author-showcase.ts
+│       └── deferred-showcase.ts
 ├── app.config.ts
 ├── app.config.server.ts
 ├── app.routes.ts
 └── app.ts
 ```
 
-The intended boundary is simple:
+The boundaries are intentional:
 
 - `core/` contains application-wide infrastructure.
 - `features/` contains business and domain functionality.
-- `shared/` can contain reusable UI or utilities when they are genuinely shared.
+- `shared/` can contain genuinely shared UI or utilities.
 - `app.config.ts` contains application-wide providers.
 - server configuration stays separate from browser configuration.
 
-Avoid putting domain logic into `core/`. A service belongs there only when it is infrastructure shared by the application as a whole.
+> 🧭 **Keep domain logic out of `core/`.** A service belongs there only when it is infrastructure shared by the application as a whole.
 
-## Start a new project from this repository
+## 🚀 Start a new project
 
-Fork the repository and adapt the application name, metadata and deployment configuration to the new project.
+Fork the repository, then adapt the application name, metadata and deployment configuration to the new project.
 
-Then install dependencies:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Start the development server:
+Start development:
 
 ```bash
 npm start
@@ -219,7 +222,9 @@ For LAN development:
 npm run start-local-machine
 ```
 
-## Quality checks
+## 🧪 Quality checks
+
+Run the checks before pushing changes:
 
 ```bash
 npm run build
@@ -228,13 +233,13 @@ npm run lint
 npm run format:check
 ```
 
-Vitest can also be run in watch mode:
+Vitest watch mode:
 
 ```bash
 npm run test:vitest:watch
 ```
 
-## SSR
+## 🖥️ SSR
 
 Build and run the generated server:
 
@@ -245,7 +250,7 @@ npm run serve:ssr
 
 The generated server is written to `dist/angular-boilerplate/server`.
 
-## SSG / prerender output
+## 📄 SSG / prerender output
 
 Build and serve the browser output:
 
@@ -254,13 +259,13 @@ npm run build
 npm run serve:ssg
 ```
 
-## Clean generated output
+## 🧹 Clean generated output
 
 ```bash
 npm run clean
 ```
 
-## Creating a feature
+## 🧩 Creating a feature
 
 Keep application-specific functionality under `features/`:
 
@@ -271,25 +276,42 @@ ng generate service features/example/example
 
 The boilerplate gives the feature a foundation for routing, HTTP, authentication, i18n, SEO, SSR and testing. The feature itself should own its domain models, API contracts, state and UI.
 
-## Keeping the boilerplate current
+## 🔄 Keeping the boilerplate current
 
-This repository is intentionally maintained as a moving target. Angular is released continuously, and the boilerplate should evolve with the framework rather than preserve an old Angular architecture indefinitely.
+This repository is intentionally maintained as a moving target. Angular evolves continuously, and the boilerplate should evolve with it rather than preserve an outdated architecture.
 
-When updating Angular, review the official Angular release notes and migration guidance, update the dependencies, then update the showcase so the documentation reflects the APIs that are actually recommended for the current version.
+When updating Angular:
 
-The documentation page is part of the maintenance surface of the boilerplate: if an Angular feature changes, the example should change with it.
+1. Review the official release notes and migration guidance.
+2. Update dependencies.
+3. Run the quality checks.
+4. Update the showcase to reflect APIs actually recommended for the new version.
+5. Update this README when the architecture changes.
 
-## Philosophy
+The documentation page is part of the maintenance surface: if an Angular capability changes, the example should change with it.
 
-The project follows a few rules:
+## 🧭 Philosophy
 
-1. **Prefer current Angular APIs.** The boilerplate should demonstrate the architecture recommended for the Angular version it targets.
-2. **Keep infrastructure separate from business logic.** A new application should be able to fork the repository without inheriting a fake domain.
-3. **Show, don't only describe.** Important Angular capabilities should be represented by working examples in the showcase.
-4. **Use progressive enhancement.** SSR, hydration, deferred views and client interactivity should work together rather than compete with each other.
-5. **Treat accessibility, SEO, testing and formatting as defaults.** They should not require a project-wide retrofit later.
-6. **Keep examples small.** The showcase exists to explain Angular, not to become another application that needs to be maintained.
+1. **Prefer current Angular APIs.** Demonstrate the architecture recommended for the Angular version being targeted.
+2. **Separate infrastructure from business logic.** A new application should not inherit a fake domain.
+3. **Show, don't only describe.** Important Angular capabilities should have working examples.
+4. **Use progressive enhancement.** SSR, hydration, deferred views and client interactivity should work together.
+5. **Make quality defaults.** Accessibility, SEO, testing and formatting should not require a later retrofit.
+6. **Keep examples small.** The showcase explains Angular; it should not become another application to maintain.
 
-## Repository
+## 👤 Author
+
+Created and maintained by **Salvatore Di Genua**.
+
+- [GitHub profile](https://github.com/SalvatoreDiGenua)
+- [ngx-request-lock](https://github.com/SalvatoreDiGenua/ngx-request-lock-docs) — an Angular library for coordinating request-driven UI locking.
+
+## 🔗 Repository
 
 [GitHub](https://github.com/SalvatoreDiGenua/angular-boilerplate)
+
+## 📚 Why the README is structured this way
+
+GitHub recommends using a README to explain why a repository is useful, what users can do with it and how to get started. For longer READMEs, clear headings, short paragraphs, lists and in-page navigation improve scanning and make the important information easier to find. citeturn0search0turn0search2
+
+This README follows those principles: the project purpose comes first, the showcase is summarized early, detailed capabilities are grouped by topic, and setup commands remain easy to find. GitHub also generates an outline from Markdown headings, so an additional manual table of contents is unnecessary here. citeturn0search0
