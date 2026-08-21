@@ -1,0 +1,97 @@
+<main class="min-h-dvh bg-slate-950 text-slate-100 selection:bg-emerald-400/30">
+  <div class="mx-auto max-w-6xl px-5 py-8 sm:px-8 lg:px-10">
+    <nav class="mb-16 flex flex-wrap items-center justify-between gap-4" aria-label="Documentation">
+      <a routerLink="/" class="text-sm font-bold tracking-tight text-white">angular-boilerplate</a>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <a routerLink="/docs" class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white">Architecture</a>
+        <a routerLink="/docs/signals" class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white">Signals</a>
+        <a routerLink="/docs/rendering" aria-current="page" class="rounded-full bg-white px-4 py-2 font-semibold text-slate-950">Rendering</a>
+      </div>
+    </nav>
+
+    <header class="max-w-4xl">
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-emerald-300">SSR + hydration</p>
+      <h1 class="text-4xl font-bold tracking-[-0.03em] sm:text-6xl">Render useful HTML first. Hydrate only what needs to wake up.</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+        The boilerplate is designed for hybrid rendering: server output becomes the initial UI, hydration reuses it,
+        and deferrable views can control when expensive islands are loaded and hydrated.
+      </p>
+    </header>
+
+    <section class="mt-14 grid gap-4 lg:grid-cols-4" aria-label="Rendering pipeline">
+      @for (step of [
+        { n: '01', title: 'Render', text: 'SSR or prerendering produces meaningful HTML before the browser executes the application.' },
+        { n: '02', title: 'Hydrate', text: 'Angular reuses the server DOM instead of rebuilding the page from scratch.' },
+        { n: '03', title: 'Defer', text: '@defer splits heavy dependencies and gives the browser a smaller initial JavaScript workload.' },
+        { n: '04', title: 'Wake', text: 'Incremental hydration can hydrate a deferred island on idle, viewport, interaction or another trigger.' }
+      ]; track step.n) {
+        <article class="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
+          <span class="text-xs font-bold text-emerald-300">{{ step.n }}</span>
+          <h2 class="mt-3 text-lg font-semibold">{{ step.title }}</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-400">{{ step.text }}</p>
+        </article>
+      }
+    </section>
+
+    <section class="mt-16 grid gap-5 md:grid-cols-2" aria-label="Modern rendering features">
+      @for (item of [
+        { title: 'provideClientHydration()', text: 'Hydrates the SSR result in the browser. The current Angular hydration pipeline can also enable incremental hydration when defer blocks use hydration triggers.' },
+        { title: 'Event replay', text: 'User interactions that happen before a deferred island hydrates can be queued and replayed, so early clicks are not lost.' },
+        { title: 'Incremental hydration', text: 'Use hydrate triggers with @defer to decide when a server-rendered block becomes interactive on the client.' },
+        { title: 'Route-level render modes', text: 'Each server route can choose Client, Prerender or Server rendering. Static marketing pages can be prerendered while personalized routes stay SSR.' },
+        { title: '@defer', text: 'Deferrable views move non-critical dependencies out of the initial load. Use placeholder, loading and error states to keep layout stable.' },
+        { title: 'View Transitions', text: 'The router can integrate browser View Transitions so route changes feel continuous instead of like full page swaps.' }
+      ]; track item.title) {
+        <article class="rounded-2xl border border-white/10 bg-white/[0.035] p-6">
+          <h2 class="text-lg font-semibold text-white">{{ item.title }}</h2>
+          <p class="mt-3 leading-7 text-slate-400">{{ item.text }}</p>
+        </article>
+      }
+    </section>
+
+    <section class="mt-16 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]" aria-labelledby="hydrate-title">
+      <div>
+        <p class="text-sm font-semibold text-emerald-300">Incremental hydration example</p>
+        <h2 id="hydrate-title" class="mt-2 text-3xl font-bold">A useful pattern for expensive UI.</h2>
+        <p class="mt-4 leading-7 text-slate-400">
+          Render the component on the server, keep its client dependencies deferred, and hydrate it when the user
+          actually interacts with it. This is especially useful for dashboards, charts, editors and secondary widgets.
+        </p>
+      </div>
+      <div class="overflow-x-auto rounded-2xl border border-white/10 bg-[#09090b] p-5 text-sm leading-7 text-slate-300">
+        <pre><code>&lt;@defer (on idle; hydrate on interaction)&gt;
+  &lt;heavy-widget /&gt;
+@placeholder {
+  &lt;div class="h-64"&gt;Widget preview&lt;/div&gt;
+}
+@loading {
+  &lt;div&gt;Loading widget…&lt;/div&gt;
+}
+@error {
+  &lt;div&gt;Widget unavailable.&lt;/div&gt;
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="mt-16 rounded-2xl border border-emerald-300/20 bg-emerald-300/5 p-6 sm:p-8" aria-labelledby="modes-title">
+      <p class="text-xs font-bold uppercase tracking-[0.16em] text-emerald-300">Hybrid rendering</p>
+      <h2 id="modes-title" class="mt-2 text-2xl font-semibold">Choose the rendering mode per route.</h2>
+      <div class="mt-6 overflow-x-auto rounded-xl bg-black/20 p-5 text-sm leading-7 text-slate-300">
+        <pre><code>export const serverRoutes: ServerRoute[] = [
+  { path: '',        renderMode: RenderMode.Prerender },
+  { path: 'account', renderMode: RenderMode.Server },
+  { path: '**',      renderMode: RenderMode.Client },
+];</code></pre>
+      </div>
+      <p class="mt-4 text-sm leading-6 text-slate-400">
+        The right choice is driven by content: prerender public, stable pages; use SSR for request-specific HTML;
+        keep browser-only experiences client rendered when server rendering provides little value.
+      </p>
+    </section>
+
+    <footer class="mt-20 flex flex-wrap gap-3 border-t border-white/10 pt-8 text-sm">
+      <a routerLink="/docs/signals" class="rounded-lg border border-white/10 px-4 py-2 text-slate-300 hover:bg-white/5">← Signals</a>
+      <a routerLink="/docs" class="rounded-lg bg-white px-4 py-2 font-semibold text-slate-950">Back to architecture</a>
+    </footer>
+  </div>
+</main>
