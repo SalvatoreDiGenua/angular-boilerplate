@@ -5,52 +5,29 @@ import {
   provideBrowserGlobalErrorListeners,
   provideZonelessChangeDetection,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import {
   provideRouter,
   withComponentInputBinding,
   withInMemoryScrolling,
   withViewTransitions,
 } from '@angular/router';
-
-import { routes } from './app.routes';
-import {
-  provideClientHydration,
-  withEventReplay,
-} from '@angular/platform-browser';
-import {
-  provideHttpClient,
-  withInterceptors,
-} from '@angular/common/http';
+import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './core/http/interceptors/auth/auth-interceptor';
 import { errorInterceptor } from './core/http/interceptors/error/error-interceptor';
 import { provideTransloco } from '@jsverse/transloco';
 import { provideTranslocoPersistLang } from '@jsverse/transloco-persist-lang';
-import { isPlatformBrowser } from '@angular/common';
 import { Language } from './core/i18n/language';
 import { TranslocoHttpLoader } from './core/i18n/transloco-loader';
 
 class NoopStorage implements Storage {
   readonly length = 0;
-
-  clear(): void {
-    //
-  }
-
-  getItem(): string | null {
-    return null;
-  }
-
-  key(): string | null {
-    return null;
-  }
-
-  removeItem(): void {
-    //
-  }
-
-  setItem(): void {
-    //
-  }
+  clear(): void {}
+  getItem(): string | null { return null; }
+  key(): string | null { return null; }
+  removeItem(): void {}
+  setItem(): void {}
 }
 
 export const appConfig: ApplicationConfig = {
@@ -66,7 +43,10 @@ export const appConfig: ApplicationConfig = {
         scrollPositionRestoration: 'top',
       }),
     ),
-    provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
+    provideHttpClient(
+      withFetch(),
+      withInterceptors([authInterceptor, errorInterceptor]),
+    ),
     provideClientHydration(withEventReplay()),
     provideTransloco({
       config: {
@@ -78,12 +58,10 @@ export const appConfig: ApplicationConfig = {
       },
       loader: TranslocoHttpLoader,
     }),
-
     provideTranslocoPersistLang({
       storage: {
         useFactory: (platformId: object) =>
           isPlatformBrowser(platformId) ? localStorage : new NoopStorage(),
-
         deps: [PLATFORM_ID],
       },
       storageKey: Language.storageKey,
