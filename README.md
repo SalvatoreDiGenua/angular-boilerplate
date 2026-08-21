@@ -173,7 +173,7 @@ The boilerplate includes:
 - Tailwind class sorting
 - Angular CLI build and test tooling
 
-The aim is to make formatting, linting and testing part of the normal workflow from the first commit.
+The test suite covers core behavior such as authentication state, route guards, HTTP error handling and application accessibility entry points.
 
 ## 🧱 Architecture
 
@@ -239,10 +239,16 @@ npm run lint
 npm run format:check
 ```
 
-Vitest watch mode:
+Run the test suite in watch mode:
 
 ```bash
 npm run test:vitest:watch
+```
+
+Generate a test coverage report:
+
+```bash
+npm run test:coverage
 ```
 
 ## 🖥️ SSR
