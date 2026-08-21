@@ -23,30 +23,12 @@
       "description": "The boilerplate brings together the infrastructure that repeatedly appears in production Angular applications, while keeping business logic intentionally empty. Every section below is a documented starting point you can fork and extend."
     },
     "features": {
-      "signals": {
-        "title": "Signal-first state",
-        "description": "Signals, computed state and modern reactive primitives provide a direct model for local and shared application state."
-      },
-      "defer": {
-        "title": "Deferrable views",
-        "description": "The built-in control flow can defer dependencies and hydrate interactive islands only when users need them."
-      },
-      "hydration": {
-        "title": "SSR + hydration",
-        "description": "Server-rendered HTML becomes interactive in the browser without throwing away the server result."
-      },
-      "resources": {
-        "title": "Resource APIs",
-        "description": "resource() and httpResource() bring asynchronous state into the signal model with loading, error and value states."
-      },
-      "forms": {
-        "title": "Signal Forms",
-        "description": "Angular 22 makes signal-based forms stable, with typed field trees and schema-driven validation."
-      },
-      "service": {
-        "title": "Modern DI",
-        "description": "@Service() is the ergonomic root-provided service decorator for the signal-first Angular style."
-      }
+      "signals": { "title": "Signal-first state", "description": "Signals, computed state and modern reactive primitives provide a direct model for local and shared application state." },
+      "defer": { "title": "Deferrable views", "description": "The built-in control flow can defer dependencies and hydrate interactive islands only when users need them." },
+      "hydration": { "title": "SSR + hydration", "description": "Server-rendered HTML becomes interactive in the browser without throwing away the server result." },
+      "resources": { "title": "Resource APIs", "description": "resource() and httpResource() bring asynchronous state into the signal model with loading, error and value states." },
+      "forms": { "title": "Signal Forms", "description": "Angular 22 makes signal-based forms stable, with typed field trees and schema-driven validation." },
+      "service": { "title": "Modern DI", "description": "@Service() is the ergonomic root-provided service decorator for the signal-first Angular style." }
     },
     "signals": {
       "title": "Signals make state explicit",
@@ -65,7 +47,13 @@
       "deferDescription": "@defer boundaries can be rendered on the server and hydrated later. Triggers such as viewport, interaction and idle let you move non-critical work away from startup.",
       "liveDemo": "Live @defer demonstration",
       "loading": "Loading the deferred island…",
-      "error": "The deferred island could not be loaded."
+      "error": "The deferred island could not be loaded.",
+      "deferredEyebrow": "Deferred island",
+      "deferredTitle": "A real @defer boundary",
+      "deferredBadge": "Loaded on viewport",
+      "deferredDescription": "This component is intentionally loaded through Angular's deferrable-view pipeline. With incremental hydration, the server can render it while the browser postpones its hydration until the configured trigger fires.",
+      "deferredButton": "Interaction replay demo",
+      "deferredNote": "Signal state survives the hydrated component lifecycle."
     },
     "data": {
       "title": "Async data becomes reactive state",
@@ -84,9 +72,7 @@
       "description": "Angular 22 introduces @Service() as the ergonomic shorthand for a root-provided service. It pairs naturally with inject() and avoids the ceremony of @Injectable({ providedIn: 'root' }) for the common singleton case.",
       "note": "Keep @Injectable when you need constructor injection, non-root scopes or advanced provider configuration. @Service() is the default style used by this boilerplate."
     },
-    "tooling": {
-      "title": "A workflow ready for real projects"
-    },
+    "tooling": { "title": "A workflow ready for real projects" },
     "footer": "Built as a living Angular reference. Update the framework, then update this page to document the new capabilities.",
     "backToTop": "Back to top"
   }
