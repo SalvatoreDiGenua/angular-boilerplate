@@ -44,9 +44,15 @@
     </div>
 
     <div class="flex flex-wrap gap-3">
+      <a
+        routerLink="/docs"
+        class="inline-flex min-h-11 items-center rounded-lg bg-slate-900 px-5 py-2.5 font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 dark:bg-white dark:text-slate-900"
+      >
+        Explore Angular features
+      </a>
       <button
         type="button"
-        class="min-h-11 rounded-lg bg-slate-900 px-5 py-2.5 font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 dark:bg-white dark:text-slate-900"
+        class="min-h-11 rounded-lg border border-slate-300 px-5 py-2.5 font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600 dark:border-slate-700"
         (click)="language.toggle()"
         [attr.aria-label]="'home.changeLanguage' | transloco"
       >
