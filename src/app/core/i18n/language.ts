@@ -1,16 +1,17 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID, Service, inject, signal } from '@angular/core';
+import { PLATFORM_ID, Injectable, inject, signal } from '@angular/core';
 import { TranslocoService } from '@jsverse/transloco';
 
 export type SupportedLanguage = 'it' | 'en';
 
-@Service()
+@Injectable({ providedIn: 'root' })
 export class Language {
   private readonly transloco = inject(TranslocoService);
   private readonly document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
-  public static readonly storageKey = 'angular-boilerplate.language-key';
-  public static readonly langQueryParam = 'lang';
+
+  static readonly storageKey = 'angular-boilerplate.language-key';
+  static readonly langQueryParam = 'lang';
 
   readonly language = signal<SupportedLanguage>(this.getInitialLanguage());
 
