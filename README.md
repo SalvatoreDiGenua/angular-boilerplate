@@ -8,6 +8,12 @@ Personal Angular starter for building new applications from a consistent, modern
 [![Vitest](https://img.shields.io/badge/Vitest-4-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev/)
 
 > 🚀 **A reusable foundation for new Angular applications — and a living showcase of modern Angular.**
+>
+> ### ▶️ Try it live
+>
+> [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/fork/github/SalvatoreDiGenua/angular-boilerplate/tree/feature/demo-stackblitz?startScript=start&title=Angular%20Boilerplate)
+>
+> No local setup required. Open the project in StackBlitz and explore the running Angular application directly in your browser.
 
 ## 🎯 What this project is for
 
