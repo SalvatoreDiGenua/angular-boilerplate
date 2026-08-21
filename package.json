@@ -10,7 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:coverage": "ng test --coverage",
-    "test:vitest:watch": "vitest",
+    "test:vitest:watch": "ng test --watch",
     "lint": "ng lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
