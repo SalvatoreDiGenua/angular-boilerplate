@@ -1,0 +1,65 @@
+<main class="min-h-dvh bg-slate-950 text-slate-100 selection:bg-cyan-400/30">
+  <div class="mx-auto max-w-6xl px-5 py-8 sm:px-8 lg:px-10">
+    <nav class="mb-16 flex flex-wrap items-center justify-between gap-4" aria-label="Documentation">
+      <a routerLink="/" class="text-sm font-bold tracking-tight text-white">angular-boilerplate</a>
+      <div class="flex flex-wrap gap-2 text-sm">
+        <a routerLink="/docs" aria-current="page" class="rounded-full bg-white px-4 py-2 font-semibold text-slate-950">Architecture</a>
+        <a routerLink="/docs/signals" class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white">Signals</a>
+        <a routerLink="/docs/rendering" class="rounded-full px-4 py-2 text-slate-300 hover:bg-white/10 hover:text-white">Rendering</a>
+      </div>
+    </nav>
+
+    <header class="max-w-4xl">
+      <p class="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Angular 22 foundation</p>
+      <h1 class="text-4xl font-bold tracking-[-0.03em] sm:text-6xl">A boilerplate built for the Angular of today.</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+        This repository is intentionally opinionated: standalone APIs, signals, zoneless change detection,
+        SSR with hydration, modern routing, Tailwind CSS, i18n and a testable feature architecture are ready before
+        the first business requirement arrives.
+      </p>
+    </header>
+
+    <section class="mt-16 grid gap-4 md:grid-cols-3" aria-label="Architecture principles">
+      @for (item of [
+        { title: 'Signal-first', text: 'Local state is modeled with signal, computed and linkedSignal instead of pushing every interaction through RxJS.' },
+        { title: 'Hydration-ready', text: 'SSR output is reused in the browser. Event replay and incremental hydration let interactive islands wake up when needed.' },
+        { title: 'Feature-first', text: 'Core infrastructure, shared UI and business features stay separated so a fork can evolve without architectural cleanup.' }
+      ]; track item.title) {
+        <article class="rounded-2xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl shadow-black/10">
+          <span class="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">0{{ $index + 1 }}</span>
+          <h2 class="mt-4 text-xl font-semibold text-white">{{ item.title }}</h2>
+          <p class="mt-3 leading-7 text-slate-400">{{ item.text }}</p>
+        </article>
+      }
+    </section>
+
+    <section class="mt-20 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]" aria-labelledby="stack-title">
+      <div>
+        <p class="text-sm font-semibold text-cyan-300">What the fork inherits</p>
+        <h2 id="stack-title" class="mt-2 text-3xl font-bold">Infrastructure before features.</h2>
+        <div class="mt-8 grid gap-3 sm:grid-cols-2">
+          @for (feature of ['Standalone components', 'Zoneless change detection', 'Signals + modern control flow', 'SSR + hydration', 'Router view transitions', 'HTTP interceptors', 'Transloco persistence', 'Tailwind + Prettier sorting', 'Vitest + jsdom', 'SEO helpers', 'Accessibility baseline', 'Feature-based architecture']; track feature) {
+            <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">
+              <span class="size-1.5 rounded-full bg-cyan-300" aria-hidden="true"></span>{{ feature }}
+            </div>
+          }
+        </div>
+      </div>
+      <aside class="rounded-2xl border border-cyan-300/20 bg-cyan-300/5 p-6" aria-labelledby="version-title">
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-cyan-300">Alignment policy</p>
+        <h2 id="version-title" class="mt-3 text-2xl font-semibold">Stay close to Angular.</h2>
+        <p class="mt-4 leading-7 text-slate-300">
+          The boilerplate targets the latest supported Angular major and adopts stable modern APIs as they mature.
+          Experimental APIs are documented separately rather than silently becoming project defaults.
+        </p>
+        <a href="https://angular.dev/roadmap" target="_blank" rel="noreferrer" class="mt-6 inline-flex min-h-11 items-center rounded-lg bg-cyan-300 px-4 py-2 font-semibold text-slate-950 hover:bg-cyan-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">
+          Follow Angular roadmap
+        </a>
+      </aside>
+    </section>
+
+    <footer class="mt-20 border-t border-white/10 pt-8 text-sm text-slate-500">
+      <p>Documentation pages are examples, not business features. Delete or replace them when starting a real application.</p>
+    </footer>
+  </div>
+</main>
