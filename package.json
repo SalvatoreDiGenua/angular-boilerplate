@@ -14,7 +14,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:vitest:watch": "vitest",
-    "test:vitest:coverage": "vitest --coverage",
     "lint": "ng lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
