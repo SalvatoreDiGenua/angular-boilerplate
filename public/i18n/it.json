@@ -1,1 +1,8 @@
-{}
+{
+  "home": {
+    "title": "Una base Angular pronta per la produzione",
+    "description": "Una base Angular 22 pulita con SSR, hydration, i18n, Tailwind CSS, signals, infrastruttura HTTP e testing moderno.",
+    "changeLanguage": "Cambia lingua",
+    "homeLink": "Home"
+  }
+}
