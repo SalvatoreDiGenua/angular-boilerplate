@@ -8,7 +8,7 @@ export const authGuard: CanActivateFn = (_route, state) => {
 
   return auth.isAuthenticated()
     ? true
-    : router.createUrlTree(['/'], {
+    : router.createUrlTree(['/not-allowed'], {
         queryParams: { returnUrl: state.url },
       });
 };
