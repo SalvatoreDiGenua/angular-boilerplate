@@ -19,6 +19,7 @@ describe('Auth', () => {
   it('sets the complete session and exposes derived signal state', () => {
     const user: AuthUser = {
       id: 'user-1',
+      email: 'ada@example.com',
       name: 'Ada Lovelace',
     };
     const session: AuthSession = {
@@ -35,7 +36,11 @@ describe('Auth', () => {
 
   it('updates the user without discarding the access token', () => {
     auth.setAccessToken('token-123');
-    const user: AuthUser = { id: 'user-2', name: 'Grace Hopper' };
+    const user: AuthUser = {
+      id: 'user-2',
+      email: 'grace@example.com',
+      name: 'Grace Hopper',
+    };
 
     auth.setUser(user);
 
@@ -46,7 +51,11 @@ describe('Auth', () => {
 
   it('clears the complete session on logout', () => {
     auth.setSession({
-      user: { id: 'user-1', name: 'Ada Lovelace' },
+      user: {
+        id: 'user-1',
+        email: 'ada@example.com',
+        name: 'Ada Lovelace',
+      },
       accessToken: 'token-123',
     });
 
