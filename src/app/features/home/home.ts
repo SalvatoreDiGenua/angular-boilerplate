@@ -2,12 +2,11 @@ import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@a
 import { TranslocoPipe } from '@jsverse/transloco';
 import { Language } from '../../core/i18n/language';
 import { Seo } from '../../core/seo/seo';
-import { AuthorShowcase } from './author-showcase';
 import { DeferredShowcase } from './deferred-showcase';
 
 @Component({
   selector: 'app-home',
-  imports: [TranslocoPipe, DeferredShowcase, AuthorShowcase],
+  imports: [TranslocoPipe, DeferredShowcase],
   templateUrl: './home.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
