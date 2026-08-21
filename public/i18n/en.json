@@ -1,1 +1,8 @@
-{}
+{
+  "home": {
+    "title": "A production-ready Angular starting point",
+    "description": "A clean Angular 22 foundation with SSR, hydration, i18n, Tailwind CSS, signals, HTTP infrastructure and modern testing.",
+    "changeLanguage": "Change language",
+    "homeLink": "Home"
+  }
+}
